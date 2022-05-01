@@ -4,8 +4,8 @@ const plugins = [
   {
     resolve: `gatsby-theme-mate`,
     options: {
-      accessToken: ACCESS_TOKEN,
-      spaceId: SPACE_ID,
+      accessToken: CONTENTFUL_DELIVERY_TOKEN,
+      spaceId: CONTENTFUL_SPACE_ID,
     },
   },
 ];
