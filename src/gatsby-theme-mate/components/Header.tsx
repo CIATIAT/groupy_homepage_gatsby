@@ -18,16 +18,9 @@ const Header = () => {
         alignItems="center"
         px={3}
       >
-        <RebassLink href={`#${getSectionHref(SECTION.home)}`} variant="empty">
+        <RebassLink href={`/`} variant="empty" style={{textDecoration: 'none', color: 'white', fontWeight: 600}}>
           <Flex justifyContent="center">
-            <Image
-              src={profile.bigIcon.src}
-              height={['60px', '80px']}
-              width={['140px', '200px']}
-              alt="Portfolio Logo"
-              p={2}
-              css={{ borderRadius: '20px', cursor: 'pointer' }}
-            />
+            <h1>Groupy Inc.</h1>
           </Flex>
         </RebassLink>
         <Flex mr={[0, 3, 5]}>
@@ -35,7 +28,7 @@ const Header = () => {
             .filter((id) => id !== 'home')
             .map((id) => (
               <Box key={id} ml={[2, 3]} color="background" fontSize={[2, 3]}>
-                <Link href={`#${id}`} tabIndex={0}>
+                <Link href={`/#${id}`} tabIndex={0}>
                   {SECTION[id]}
                 </Link>
               </Box>
