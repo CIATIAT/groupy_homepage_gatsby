@@ -13,7 +13,7 @@ const Helmet = ({ theme }: Props) => {
   const title = `${name} Portfolio`;
 
   return (
-    <ReactHelmet htmlAttributes={{ lang: 'en' }}>
+    <ReactHelmet htmlAttributes={{ lang: 'jp' }}>
       <meta charSet="utf-8" />
       <title>Groupy Inc.</title>
       <meta name="description" content={description} />
@@ -27,7 +27,7 @@ const Helmet = ({ theme }: Props) => {
       <meta name="og:description" content={description} />
       <meta name="og:image" content={`https:${profile.bigIcon.src}`} />
       <meta name="og:site_name" content={title} />
-      <meta name="og:locale" content="en_US" />
+      <meta name="og:locale" content="ja" />
       <meta name="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
