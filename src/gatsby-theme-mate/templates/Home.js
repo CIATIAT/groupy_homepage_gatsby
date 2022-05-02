@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Layout components
-import Layout from 'gatsby-theme-mate/src/components/Layout';
+import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Footer from 'gatsby-theme-mate/src/components/Footer';
 
