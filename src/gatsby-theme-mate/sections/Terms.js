@@ -40,7 +40,7 @@ export default () => (
 const Background = () => (
   <>
     <Triangle
-      color="secondary"
+      color="muted"
       height={['50vh', '20vh']}
       width={['50vw', '50vw']}
       position="bottom-left"
@@ -54,7 +54,7 @@ const Background = () => (
     />
 
     <Triangle
-      color="muted"
+      color="secondary"
       height={['25vh', '20vh']}
       width={['100vw', '100vw']}
     />
