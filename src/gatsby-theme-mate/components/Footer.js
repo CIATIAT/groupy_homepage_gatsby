@@ -18,13 +18,13 @@ const Footer = () => {
       <FooterContainer>
         <Fade direction="left" triggerOnce>
           <Text fontSize={[1, 2]} color="background">
-            <Link href="company">会社概要</Link>
+            <Link href="/company">会社概要</Link>
             <span>　</span>
-            <Link href="terms">利用規約</Link>
+            <Link href="/terms">利用規約</Link>
             <span>　</span>
-            <Link href="privacy-policy">プライバシーポリシー</Link>
+            <Link href="/privacy-policy">プライバシーポリシー</Link>
             <span>　</span>
-            <Link href="transaction-terms">特定商取引法に基づく表示</Link>
+            <Link href="/transaction-terms">特定商取引法に基づく表示</Link>
           </Text>
         </Fade>
         <Flex>
