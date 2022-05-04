@@ -18,7 +18,7 @@ const Header = () => {
         alignItems="center"
         px={3}
       >
-        <RebassLink href={`/`} variant="empty" style={{textDecoration: 'none', color: 'white', fontWeight: 600}}>
+        <RebassLink href={`/`} variant="empty" style={{textDecoration: 'none', color: 'white', fontWeight: 600}} fontSize={[1, 2]}>
           <Flex justifyContent="center">
             <h1>Groupy Inc.</h1>
           </Flex>
