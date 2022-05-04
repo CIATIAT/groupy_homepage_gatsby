@@ -9,8 +9,8 @@ type Props = {
 };
 
 const Helmet = ({ theme }: Props) => {
-  const { name, description, profile } = useHelmetQuery();
-  const title = `${name} Portfolio`;
+  const { description, profile } = useHelmetQuery();
+  const title = `Groupy株式会社`;
   const domain = `groupy.space`
 
   return (
