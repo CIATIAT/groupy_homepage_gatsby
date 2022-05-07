@@ -1,8 +1,8 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import ReactMarkdown from 'react-markdown';
-import Components from "../components/MarkdownComponents";
-import Section from "../components/Section";
+import Components from "../components/MarkdownComponent";
+import Section from "../components/SectionSub";
 import { Fade } from 'react-awesome-reveal';
 import { Box, Flex } from 'rebass/styled-components';
 import Triangle from "gatsby-theme-mate/src/components/Triangle";

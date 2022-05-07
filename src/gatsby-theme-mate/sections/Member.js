@@ -11,7 +11,7 @@ const Projects = () => {
   const projects = useProjectsQuery();
 
   return (
-    <Section.Container id={SECTION.member} Background={Background}>
+    <Section.Container id={SECTION.member}>
       <Section.Header name={SECTION.member} />
 
       <CardContainer minWidth="350px">
@@ -28,7 +28,7 @@ const Projects = () => {
 const Background = () => (
   <>
     <Triangle
-      color="secondary"
+      color="color3"
       height={['80vh', '80vh']}
       width={['100vw', '100vw']}
       position="top-right"
@@ -42,14 +42,14 @@ const Background = () => (
     />
 
     <Triangle
-      color="primary"
+      color="color2"
       height={['25vh', '40vh']}
       width={['75vw', '60vw']}
       position="bottom-right"
     />
 
     <Triangle
-      color="muted"
+      color="color2"
       height={['25vh', '20vh']}
       width={['100vw', '100vw']}
       position="bottom-right"

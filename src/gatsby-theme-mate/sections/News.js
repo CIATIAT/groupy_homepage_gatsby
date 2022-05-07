@@ -11,7 +11,7 @@ const Writing = () => {
   const { posts } = useMediumQuery();
 
   return (
-    <Section.Container id={SECTION.news} Background={Background}>
+    <Section.Container id={SECTION.news}>
       <Section.Header name={SECTION.news} label="writing" />
       <CardContainer minWidth="300px">
         <Fade direction="down" triggerOnce cascade damping={0.5}>
@@ -27,21 +27,21 @@ const Writing = () => {
 const Background = () => (
   <>
     <Triangle
-      color="muted"
+      color="color2"
       height={['15vh', '10vh']}
       width={['100vw', '100vw']}
       position="top-left"
     />
 
     <Triangle
-      color="secondary"
+      color="color1"
       height={['50vh', '40vh']}
       width={['70vw', '40vw']}
       position="bottom-left"
     />
 
     <Triangle
-      color="primary"
+      color="color1"
       height={['40vh', '15vh']}
       width={['100vw', '100vw']}
       position="bottom-right"

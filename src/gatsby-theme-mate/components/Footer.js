@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Text, Box, Flex } from 'rebass/styled-components';
 import { Fade } from 'react-awesome-reveal';
-import SocialLink from 'gatsby-theme-mate/src/components/SocialLink';
+import SocialLink from './SocialLink';
 import Link from 'gatsby-theme-mate/src/components/Link';
 import { useSiteQuery } from 'gatsby-theme-mate/src/queries/useSiteQuery';
 import { CONTENTFUL_URL, GATSBY_URL, NETLIFY_URL } from 'gatsby-theme-mate/src/utils/constants';
@@ -14,7 +14,7 @@ const Footer = () => {
   const { name, socialLinks } = useSiteQuery();
 
   return (
-    <Box p={[2, 3]} backgroundColor="primary" id="footer" as="footer">
+    <Box p={[2, 3]} backgroundColor="color1" id="footer" as="footer">
       <FooterContainer>
         <Fade direction="left" triggerOnce>
           <Text fontSize={[1, 2]} color="background">
