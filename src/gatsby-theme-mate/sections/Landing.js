@@ -12,6 +12,7 @@ import { Fade } from 'react-awesome-reveal';
 import BG from '/sampleBG.jpeg';
 
 
+
 const centerHorizontally = { marginRight: 'auto', marginLeft: 'auto' };
 
 const LandingPage = () => {
@@ -20,7 +21,7 @@ const LandingPage = () => {
   return (
     <div  style=
     {{
-      backgroundImage: "url(sampleBG.jpeg)",
+      backgroundImage: `url(${BG})`,
       backgroundAttachment: 'fixed',
       backgroundPosition: 'center',
       backgroundSize: 'cover',
