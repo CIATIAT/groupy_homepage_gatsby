@@ -11,7 +11,7 @@ type Props = {
 };
 
 const Triangle = styled.div<Props>`
-  position: relative;
+  position: absolute;
   width: 0;
   height: 0;
   z-index: -2;
