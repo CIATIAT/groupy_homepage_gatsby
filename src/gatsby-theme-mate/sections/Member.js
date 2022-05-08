@@ -6,21 +6,35 @@ import Triangle from "gatsby-theme-mate/src/components/Triangle";
 import Project from "gatsby-theme-mate/src/components/Project";
 import { useProjectsQuery } from "gatsby-theme-mate/src/queries/useProjectsQuery";
 import { SECTION } from "../utils/constants";
+import useIsSp from "../hooks/useIsSp";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import CenterSlider from "../../components/CenterSlider";
 
 const Projects = () => {
   const projects = useProjectsQuery();
-
+  const isSp = useIsSp();
   return (
     <Section.Container id={SECTION.member}>
       <Section.Header name={SECTION.member} />
 
-      <CardContainer minWidth="350px">
+      {isSp ? (
         <Fade triggerOnce>
-          {projects.map((p, i) => (
-            <Project {...p} key={i} />
-          ))}
+          <CenterSlider>
+            {projects.map((p, i) => (
+              <Project {...p} key={i} />
+            ))}
+          </CenterSlider>
         </Fade>
-      </CardContainer>
+      ) : (
+        <CardContainer minWidth="350px">
+          <Fade triggerOnce>
+            {projects.map((p, i) => (
+              <Project {...p} key={i} />
+            ))}
+          </Fade>
+        </CardContainer>
+      )}
     </Section.Container>
   );
 };

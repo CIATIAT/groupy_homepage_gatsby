@@ -6,20 +6,33 @@ import Triangle from "gatsby-theme-mate/src/components/Triangle";
 import { useMediumQuery } from "gatsby-theme-mate/src/queries/useMediumQuery";
 import { Post } from "gatsby-theme-mate/src/components/Post";
 import { SECTION } from "../utils/constants";
+import useIsSp from "../hooks/useIsSp";
+import CenterSlider from "../../components/CenterSlider";
 
 const Writing = () => {
   const { posts } = useMediumQuery();
+  const isSp = useIsSp();
 
   return (
     <Section.Container id={SECTION.news}>
       <Section.Header name={SECTION.news} label="writing" />
-      <CardContainer minWidth="300px">
+      {isSp ? (
         <Fade triggerOnce>
-          {posts.map((p) => (
-            <Post {...p} key={p.url} />
-          ))}
+          <CenterSlider>
+            {posts.map((p) => (
+              <Post {...p} key={p.url} />
+            ))}
+          </CenterSlider>
         </Fade>
-      </CardContainer>
+      ) : (
+        <CardContainer minWidth="300px">
+          <Fade triggerOnce>
+            {posts.map((p) => (
+              <Post {...p} key={p.url} />
+            ))}
+          </Fade>
+        </CardContainer>
+      )}
     </Section.Container>
   );
 };
