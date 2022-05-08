@@ -37,7 +37,7 @@ export default () => (
       <Section.Container id={SECTION.about}>
         <Section.Header name={SECTION.about + "について"} label="person" />
         <Flex justifyContent="left" alignItems="left" flexWrap="wrap">
-          <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]} mt={2} verticalAlign="left">
+          <Box width={[1, 1, 4 / 6]} mt={2} verticalAlign="left">
             <Fade triggerOnce>
               <ReactMarkdown
                 children={data.contentfulAbout.childContentfulAboutAboutMeTextNode.childMarkdownRemark.rawMarkdownBody}
@@ -47,7 +47,7 @@ export default () => (
           </Box>
           <Box width={[1, 1, 2 / 6]} style={{ maxWidth: "300px", margin: "auto" }}>
             <Fade triggerOnce>
-              <ProfilePicture mt={[4, 4, 0]} ml={[0, 0, 1]} {...data.contentfulAsset.resize} />
+              <ProfilePicture mt={[0, 4, 0]} ml={[0, 0, 1]} {...data.contentfulAsset.resize} />
             </Fade>
           </Box>
         </Flex>
