@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const useScroll = () => {
   const [stage, setStage] = useState<0 | 1 | 2>(0);
-  const threshold = window.innerHeight / 2; // window.innerHeightの半分の値分スクロールしたらコンテンツを入れ替える
+  const threshold = window.innerHeight; // window.innerHeightの半分の値分スクロールしたらコンテンツを入れ替える
 
   const handleScroll = () => {
     const scrollAmountFromContents = window.pageYOffset - window.innerHeight;

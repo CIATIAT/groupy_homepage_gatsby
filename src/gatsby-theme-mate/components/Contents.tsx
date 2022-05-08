@@ -4,7 +4,7 @@ import useScroll from "../hooks/useScroll";
 import About from "../sections/About";
 import Member from "../sections/Member";
 import News from "../sections/News";
-import BG from "/sampleBG.jpeg";
+// import BG from "/sampleBG.jpeg";
 
 const Contents = () => {
   const { stage } = useScroll();
@@ -26,14 +26,15 @@ const Contents = () => {
           top: "0",
           minHeight: "100vh",
           width: "100%",
-          // backgroundColor: "orange"
-          backgroundImage: `url(${BG})`,
-          backgroundSize: "cover"
+          backgroundColor: "white"
+          // NOTE: ↓背景に画像をあてる場合
+          // backgroundImage: `url(${BG})`,
+          // backgroundSize: "cover"
         }}
       >
-        {renderContents()}
+        <Box sx={{ marginBottom: "200px" }}>{renderContents()}</Box>
       </Box>
-      <Box sx={{ height: "150vh" }}></Box>
+      <Box sx={{ height: "300vh" }}></Box>
     </>
   );
 };
