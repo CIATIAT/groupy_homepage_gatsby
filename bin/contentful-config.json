@@ -57,8 +57,7 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false
         },
@@ -68,8 +67,7 @@
           "type": "Date",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false
         },
@@ -79,8 +77,7 @@
           "type": "Link",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false,
           "linkType": "Asset"
@@ -91,8 +88,7 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false
         },
@@ -102,8 +98,7 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false
         },
@@ -113,8 +108,7 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false
         },
@@ -124,8 +118,7 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false
         }
@@ -188,8 +181,7 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false
         },
@@ -199,8 +191,7 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false
         },
@@ -210,14 +201,12 @@
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false,
           "items": {
             "type": "Symbol",
-            "validations": [
-            ]
+            "validations": []
           }
         },
         {
@@ -226,17 +215,14 @@
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false,
           "items": {
             "type": "Link",
             "validations": [
               {
-                "linkContentType": [
-                  "socialLink"
-                ]
+                "linkContentType": ["socialLink"]
               }
             ],
             "linkType": "Entry"
@@ -248,8 +234,7 @@
           "type": "Link",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false,
           "linkType": "Asset"
@@ -260,8 +245,7 @@
           "type": "Text",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false
         },
@@ -271,8 +255,7 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false
         },
@@ -282,8 +265,7 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false
         },
@@ -293,17 +275,14 @@
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false,
           "items": {
             "type": "Link",
             "validations": [
               {
-                "linkContentType": [
-                  "project"
-                ]
+                "linkContentType": ["project"]
               }
             ],
             "linkType": "Entry"
@@ -368,8 +347,7 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false
         },
@@ -379,8 +357,7 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false
         },
@@ -390,16 +367,14 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [
-          ],
+          "validations": [],
           "disabled": false,
           "omitted": false
         }
       ]
     }
   ],
-  "tags": [
-  ],
+  "tags": [],
   "editorInterfaces": [
     {
       "sys": {
@@ -634,8 +609,7 @@
   "entries": [
     {
       "metadata": {
-        "tags": [
-        ]
+        "tags": []
       },
       "sys": {
         "space": {
@@ -692,13 +666,13 @@
       },
       "fields": {
         "name": {
-          "en-US": "Mate"
+          "ja": "Mate"
         },
         "description": {
-          "en-US": "Gatsby v2 starter to create a top notch portfolio!"
+          "ja": "Gatsby v2 starter to create a top notch portfolio!"
         },
         "roles": {
-          "en-US": [
+          "ja": [
             "Quick setup 🚀",
             "Responsive 📱",
             "PWA ✨",
@@ -706,7 +680,7 @@
           ]
         },
         "socialLinks": {
-          "en-US": [
+          "ja": [
             {
               "sys": {
                 "type": "Link",
@@ -738,7 +712,7 @@
           ]
         },
         "profile": {
-          "en-US": {
+          "ja": {
             "sys": {
               "type": "Link",
               "linkType": "Asset",
@@ -747,13 +721,13 @@
           }
         },
         "aboutMe": {
-          "en-US": "Hello 👋 I'm Mate a gatsby starter which is focus on simplicity and extensibility. It's build with Gatsby(duh), [Rebass](https://jxnblk.com/rebass/) (styled-component system) and [Contentful](https://www.contentful.com/).\n\nThe starter will give you 4 sections (it's really easy to add more if you want 😃):\n* [Landing:](#home) Displays a nice greeting with your name, also your roles (what you  are) and all your social links.\n* [About:](#about) Show the about section where you can write about who you are, what you like to do, etc. Also you can add a photo next to it!\n* [Project:](#projects) Displays a card for all your project that you've made and also the posibility to link with github or and external link.\n* [Writing:](#writing) Take the information about your medium user and show up to 6 stories as cards with the link to Medium."
+          "ja": "Hello 👋 I'm Mate a gatsby starter which is focus on simplicity and extensibility. It's build with Gatsby(duh), [Rebass](https://jxnblk.com/rebass/) (styled-component system) and [Contentful](https://www.contentful.com/).\n\nThe starter will give you 4 sections (it's really easy to add more if you want 😃):\n* [Landing:](#home) Displays a nice greeting with your name, also your roles (what you  are) and all your social links.\n* [About:](#about) Show the about section where you can write about who you are, what you like to do, etc. Also you can add a photo next to it!\n* [Project:](#projects) Displays a card for all your project that you've made and also the posibility to link with github or and external link.\n* [Writing:](#writing) Take the information about your medium user and show up to 6 stories as cards with the link to Medium."
         },
         "mediumUser": {
-          "en-US": "@mate.starter"
+          "ja": "@mate.starter"
         },
         "projects": {
-          "en-US": [
+          "ja": [
             {
               "sys": {
                 "type": "Link",
@@ -781,8 +755,7 @@
     },
     {
       "metadata": {
-        "tags": [
-        ]
+        "tags": []
       },
       "sys": {
         "space": {
@@ -839,20 +812,19 @@
       },
       "fields": {
         "name": {
-          "en-US": "Github"
+          "ja": "Github"
         },
         "url": {
-          "en-US": "https://github.com/EmaSuriano/gatsby-starter-mate/blob/master/README.md"
+          "ja": "https://github.com/EmaSuriano/gatsby-starter-mate/blob/master/README.md"
         },
         "fontAwesomeIcon": {
-          "en-US": "github"
+          "ja": "github"
         }
       }
     },
     {
       "metadata": {
-        "tags": [
-        ]
+        "tags": []
       },
       "sys": {
         "space": {
@@ -909,13 +881,13 @@
       },
       "fields": {
         "name": {
-          "en-US": "Google"
+          "ja": "Google"
         },
         "publishedDate": {
-          "en-US": "1998-06-19T00:00+02:00"
+          "ja": "1998-06-19T00:00+02:00"
         },
         "logo": {
-          "en-US": {
+          "ja": {
             "sys": {
               "type": "Link",
               "linkType": "Asset",
@@ -924,23 +896,22 @@
           }
         },
         "repositoryUrl": {
-          "en-US": "https://github.com/google"
+          "ja": "https://github.com/google"
         },
         "description": {
-          "en-US": "It is the most-used search engine on the World Wide Web, handling more than three billion searches each day."
+          "ja": "It is the most-used search engine on the World Wide Web, handling more than three billion searches each day."
         },
         "projectUrl": {
-          "en-US": "https://www.google.com/"
+          "ja": "https://www.google.com/"
         },
         "type": {
-          "en-US": "Web"
+          "ja": "Web"
         }
       }
     },
     {
       "metadata": {
-        "tags": [
-        ]
+        "tags": []
       },
       "sys": {
         "space": {
@@ -997,13 +968,13 @@
       },
       "fields": {
         "name": {
-          "en-US": "Gatsby JS"
+          "ja": "Gatsby JS"
         },
         "publishedDate": {
-          "en-US": "2016-09-01T00:00+02:00"
+          "ja": "2016-09-01T00:00+02:00"
         },
         "logo": {
-          "en-US": {
+          "ja": {
             "sys": {
               "type": "Link",
               "linkType": "Asset",
@@ -1012,23 +983,22 @@
           }
         },
         "repositoryUrl": {
-          "en-US": "https://github.com/gatsbyjs/gatsby"
+          "ja": "https://github.com/gatsbyjs/gatsby"
         },
         "description": {
-          "en-US": " Gatsby is a React-based, GraphQL powered, static site generator. Overall think, part Jekyll, part create-react-app."
+          "ja": " Gatsby is a React-based, GraphQL powered, static site generator. Overall think, part Jekyll, part create-react-app."
         },
         "projectUrl": {
-          "en-US": "https://www.gatsbyjs.org/"
+          "ja": "https://www.gatsbyjs.org/"
         },
         "type": {
-          "en-US": "Framework"
+          "ja": "Framework"
         }
       }
     },
     {
       "metadata": {
-        "tags": [
-        ]
+        "tags": []
       },
       "sys": {
         "space": {
@@ -1085,13 +1055,13 @@
       },
       "fields": {
         "name": {
-          "en-US": "Facebook"
+          "ja": "Facebook"
         },
         "publishedDate": {
-          "en-US": "2004-09-01T00:00+02:00"
+          "ja": "2004-09-01T00:00+02:00"
         },
         "logo": {
-          "en-US": {
+          "ja": {
             "sys": {
               "type": "Link",
               "linkType": "Asset",
@@ -1100,23 +1070,22 @@
           }
         },
         "repositoryUrl": {
-          "en-US": "https://github.com/facebook"
+          "ja": "https://github.com/facebook"
         },
         "description": {
-          "en-US": "Facebook is a popular free social networking website that allows registered users to keep in touch with friends."
+          "ja": "Facebook is a popular free social networking website that allows registered users to keep in touch with friends."
         },
         "projectUrl": {
-          "en-US": "http://facebook.com/"
+          "ja": "http://facebook.com/"
         },
         "type": {
-          "en-US": "Web"
+          "ja": "Web"
         }
       }
     },
     {
       "metadata": {
-        "tags": [
-        ]
+        "tags": []
       },
       "sys": {
         "space": {
@@ -1173,20 +1142,19 @@
       },
       "fields": {
         "name": {
-          "en-US": "Medium"
+          "ja": "Medium"
         },
         "url": {
-          "en-US": "https://medium.com/@emasuriano"
+          "ja": "https://medium.com/@emasuriano"
         },
         "fontAwesomeIcon": {
-          "en-US": "medium"
+          "ja": "medium"
         }
       }
     },
     {
       "metadata": {
-        "tags": [
-        ]
+        "tags": []
       },
       "sys": {
         "space": {
@@ -1243,20 +1211,19 @@
       },
       "fields": {
         "name": {
-          "en-US": "Contact me"
+          "ja": "Contact me"
         },
         "url": {
-          "en-US": "https://emanuelsuriano.typeform.com/to/OeETl6"
+          "ja": "https://emanuelsuriano.typeform.com/to/OeETl6"
         },
         "fontAwesomeIcon": {
-          "en-US": "envelope"
+          "ja": "envelope"
         }
       }
     },
     {
       "metadata": {
-        "tags": [
-        ]
+        "tags": []
       },
       "sys": {
         "space": {
@@ -1313,13 +1280,13 @@
       },
       "fields": {
         "name": {
-          "en-US": "Twitter"
+          "ja": "Twitter"
         },
         "url": {
-          "en-US": "https://twitter.com/emasuriano"
+          "ja": "https://twitter.com/emasuriano"
         },
         "fontAwesomeIcon": {
-          "en-US": "twitter"
+          "ja": "twitter"
         }
       }
     }
@@ -1327,8 +1294,7 @@
   "assets": [
     {
       "metadata": {
-        "tags": [
-        ]
+        "tags": []
       },
       "sys": {
         "space": {
@@ -1378,13 +1344,13 @@
       },
       "fields": {
         "title": {
-          "en-US": "Google Logo"
+          "ja": "Google Logo"
         },
         "description": {
-          "en-US": "Logo from Google"
+          "ja": "Logo from Google"
         },
         "file": {
-          "en-US": {
+          "ja": {
             "url": "//images.ctfassets.net/ntiequ7mc6q6/3AorRmtWOsGQ4o8gK0YWKG/c76c25aaef26807e5bc51d576b46bc17/google_PNG19630.png",
             "details": {
               "size": 39228,
@@ -1401,8 +1367,7 @@
     },
     {
       "metadata": {
-        "tags": [
-        ]
+        "tags": []
       },
       "sys": {
         "space": {
@@ -1452,13 +1417,13 @@
       },
       "fields": {
         "title": {
-          "en-US": "Gatsby logo"
+          "ja": "Gatsby logo"
         },
         "description": {
-          "en-US": "Gatsby logo"
+          "ja": "Gatsby logo"
         },
         "file": {
-          "en-US": {
+          "ja": {
             "url": "//images.ctfassets.net/ntiequ7mc6q6/6rkOXCpyvuekYIgy6U6gGu/6458ef8b90eb311174cb29be83e2231e/1_t5EnAu3eSWJA0rmZ9v3xuw.png",
             "details": {
               "size": 111702,
@@ -1475,8 +1440,7 @@
     },
     {
       "metadata": {
-        "tags": [
-        ]
+        "tags": []
       },
       "sys": {
         "space": {
@@ -1526,13 +1490,13 @@
       },
       "fields": {
         "title": {
-          "en-US": "Facebook logo"
+          "ja": "Facebook logo"
         },
         "description": {
-          "en-US": "Facebook logo"
+          "ja": "Facebook logo"
         },
         "file": {
-          "en-US": {
+          "ja": {
             "url": "//images.ctfassets.net/ntiequ7mc6q6/u3Um4zkMrAaQioyq4oSIW/2357b0edc797ccf7355fd159d32a255f/600px-Facebook_logo__28square_29.png",
             "details": {
               "size": 13209,
@@ -1549,8 +1513,7 @@
     },
     {
       "metadata": {
-        "tags": [
-        ]
+        "tags": []
       },
       "sys": {
         "space": {
@@ -1600,13 +1563,13 @@
       },
       "fields": {
         "title": {
-          "en-US": "Mate Logo"
+          "ja": "Mate Logo"
         },
         "description": {
-          "en-US": "Mate Logo"
+          "ja": "Mate Logo"
         },
         "file": {
-          "en-US": {
+          "ja": {
             "url": "//images.ctfassets.net/ntiequ7mc6q6/6nf3rNaaVaUqYcoAcciSeC/04fdf4b66a084b0c9c400ae5bbf4a022/Mate_Logo.png",
             "details": {
               "size": 52527,
@@ -1625,7 +1588,7 @@
   "locales": [
     {
       "name": "English (United States)",
-      "code": "en-US",
+      "code": "ja",
       "fallbackCode": null,
       "default": true,
       "contentManagementApi": true,
@@ -1713,10 +1676,8 @@
         },
         "updatedAt": "2022-03-21T08:52:40Z"
       },
-      "headers": [
-      ]
+      "headers": []
     }
   ],
-  "roles": [
-  ]
+  "roles": []
 }
