@@ -10,11 +10,11 @@ const Contents = () => {
   const stage = useScroll();
   const renderContents = () => {
     switch (stage) {
-      case 0:
+      case "about":
         return <About />;
-      case 1:
+      case "member":
         return <Member />;
-      case 2:
+      case "news":
         return <News />;
     }
   };

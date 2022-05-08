@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { stageState } from "../../atoms";
 
 const useScroll = () => {
-  const [stage, setStage] = useState<0 | 1 | 2>(0);
+  const [stage, setStage] = useRecoilState(stageState);
   const threshold = window.innerHeight; // window.innerHeightの半分の値分スクロールしたらコンテンツを入れ替える
 
   const handleScroll = () => {
     const scrollAmountFromContents = window.pageYOffset - window.innerHeight;
     if (scrollAmountFromContents < threshold) {
-      setStage(0);
+      setStage("about");
     } else if (scrollAmountFromContents < threshold * 2) {
-      setStage(1);
+      setStage("member");
     } else {
-      setStage(2);
+      setStage("news");
     }
   };
   useEffect(() => {
