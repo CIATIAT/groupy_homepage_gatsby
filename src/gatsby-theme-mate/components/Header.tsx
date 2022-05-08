@@ -59,7 +59,7 @@ const StyledHeadroom = styled(Headroom)`
   }
 
   .headroom--pinned {
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: black;
   }
 
   position: absolute;
