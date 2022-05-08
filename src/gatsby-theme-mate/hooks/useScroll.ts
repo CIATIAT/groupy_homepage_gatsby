@@ -18,7 +18,7 @@ const useScroll = () => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  return { stage };
+  return stage;
 };
 
 export default useScroll;

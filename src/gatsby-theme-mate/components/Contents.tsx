@@ -7,7 +7,7 @@ import News from "../sections/News";
 // import BG from "/sampleBG.jpeg";
 
 const Contents = () => {
-  const { stage } = useScroll();
+  const stage = useScroll();
   const renderContents = () => {
     switch (stage) {
       case 0:
