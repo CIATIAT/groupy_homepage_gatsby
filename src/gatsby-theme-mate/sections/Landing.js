@@ -8,7 +8,9 @@ import { SECTION } from "../utils/constants";
 import { getSectionHref } from "gatsby-theme-mate/src/utils/helpers";
 import { Fade } from "react-awesome-reveal";
 import BG from "/sampleBG.jpeg";
+import bgVideo from "/bgVideo.mp4";
 import useOpacityChange from "../hooks/useOpacityChange";
+import styled from "styled-components";
 
 const centerHorizontally = { marginRight: "auto", marginLeft: "auto" };
 const DISAPPER_THRESHOLD = 400;
@@ -18,78 +20,105 @@ const LandingPage = () => {
   const opacity = useOpacityChange(DISAPPER_THRESHOLD);
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${BG})`,
-        backgroundAttachment: "fixed",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat"
-      }}
-    >
-      <Section.Container id={SECTION.home}>
-        <Box sx={{ opacity }}>
-          <Fade direction="down" triggerOnce>
-            <Heading textAlign="center" as="h1" color="white" fontSize={[5, 7]} mb={[3, 4, 5]}>
-              {name}
-            </Heading>
-          </Fade>
-          <Fade direction="down" triggerOnce>
-            <Heading as="h2" color="white" fontSize={[4, 6]} mb={[3, 5]} textAlign="center" style={centerHorizontally}>
-              <TextLoop interval={5000}>
-                {roles
-                  .sort(() => (deterministic ? 1 : Math.random() - 0.5))
-                  .map((text) => (
-                    <Text width={[300, 500]} key={text}>
-                      {text}
-                    </Text>
-                  ))}
-              </TextLoop>
-            </Heading>
-          </Fade>
-          <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
-            <Fade direction="right" triggerOnce cascade damping={0.5}>
-              <Link
-                href=""
-                sx={{
-                  color: "#fff",
-                  border: "solid",
-                  borderColor: "#fff",
-                  fontSize: "1.1rem",
-                  fontWeight: "700",
-                  lineHeight: "1.5",
-                  position: "relative",
-                  display: "inline-block",
-                  padding: "1rem 4rem",
-                  cursor: "pointer",
-                  webkitUserSelect: "none",
-                  mozUserSelect: "none",
-                  msUserSelect: "none",
-                  userSelect: "none",
-                  webkitTransition: "all 0.3s",
-                  transition: "all 0.3s",
-                  textAlign: "center",
-                  verticalAlign: "middle",
-                  textDecoration: "none",
-                  letterSpacing: "0.1em",
-                  borderRadius: "2rem"
-                }}
+    <Box>
+      <Box>
+        <Section.Container id={SECTION.home}>
+          <Box sx={{ opacity }}>
+            <Fade direction="down" triggerOnce>
+              <Heading textAlign="center" as="h1" color="white" fontSize={[5, 7]} mb={[3, 4, 5]}>
+                {name}
+              </Heading>
+            </Fade>
+            <Fade direction="down" triggerOnce>
+              <Heading
+                as="h2"
+                color="white"
+                fontSize={[4, 6]}
+                mb={[3, 5]}
+                textAlign="center"
+                style={centerHorizontally}
               >
-                インストールはこちら
-              </Link>
-              {/* {socialLinks.map((sl) => (
+                <TextLoop interval={5000}>
+                  {roles
+                    .sort(() => (deterministic ? 1 : Math.random() - 0.5))
+                    .map((text) => (
+                      <Text width={[300, 500]} key={text}>
+                        {text}
+                      </Text>
+                    ))}
+                </TextLoop>
+              </Heading>
+            </Fade>
+            <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
+              <Fade direction="right" triggerOnce cascade damping={0.5}>
+                <Link
+                  href=""
+                  sx={{
+                    color: "#fff",
+                    border: "solid",
+                    borderColor: "#fff",
+                    fontSize: "1.1rem",
+                    fontWeight: "700",
+                    lineHeight: "1.5",
+                    position: "relative",
+                    display: "inline-block",
+                    padding: "1rem 4rem",
+                    cursor: "pointer",
+                    webkitUserSelect: "none",
+                    mozUserSelect: "none",
+                    msUserSelect: "none",
+                    userSelect: "none",
+                    webkitTransition: "all 0.3s",
+                    transition: "all 0.3s",
+                    textAlign: "center",
+                    verticalAlign: "middle",
+                    textDecoration: "none",
+                    letterSpacing: "0.1em",
+                    borderRadius: "2rem"
+                  }}
+                >
+                  インストールはこちら
+                </Link>
+                {/* {socialLinks.map((sl) => (
             <Box mx={3} fontSize={[5, 6, 6]} key={sl.name}>
               <SocialLink {...sl} />
             </Box>
           ))} */}
-            </Fade>
-          </Flex>
-        </Box>
-        <ScrollIcon href={`#${getSectionHref(SECTION.about)}`} />
-      </Section.Container>
-    </div>
+              </Fade>
+            </Flex>
+          </Box>
+          <ScrollIcon href={`#${getSectionHref(SECTION.about)}`} />
+        </Section.Container>
+      </Box>
+      <VideoBox
+        sx={{
+          position: "fixed",
+          zIndex: "-1",
+          top: "0",
+          left: "0",
+          width: "100%"
+        }}
+      >
+        <video poster={BG} playsInline muted autoPlay loop>
+          <source src={bgVideo} type="video/mp4" />
+          <p>動画を再生できる環境ではありません。</p>
+        </video>
+      </VideoBox>
+    </Box>
   );
 };
+
+const VideoBox = styled(Box)`
+  &:before {
+    background-color: rgba(0, 0, 0, 0.4);
+    content: "";
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+`;
 
 const Background = () => (
   <>
