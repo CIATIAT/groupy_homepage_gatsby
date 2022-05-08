@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Link from "gatsby-theme-mate/src/components/Link";
 import { useHelmetQuery } from "gatsby-theme-mate/src/queries/useHelmetQuery";
 import { SECTION } from "../utils/constants";
-import useIsSp from "../hooks/useIsSp";
+import useIsSp from "../../hooks/useIsSp";
 import Drawer from "../../components/Drawer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";

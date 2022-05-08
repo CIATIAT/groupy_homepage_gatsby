@@ -17,7 +17,6 @@ export const CardContainer = styled.div<CardContainerProps>`
   }
 `;
 
-// NOTE: SPのカルーセルの場合、このスタイルが余計でなのでmedia query追加
 export const Card = styled(CardRebass).attrs({
   bg: "background",
   boxShadow: 0

@@ -6,7 +6,7 @@ import Triangle from "gatsby-theme-mate/src/components/Triangle";
 import Project from "gatsby-theme-mate/src/components/Project";
 import { useProjectsQuery } from "gatsby-theme-mate/src/queries/useProjectsQuery";
 import { SECTION } from "../utils/constants";
-import useIsSp from "../hooks/useIsSp";
+import useIsSp from "../../hooks/useIsSp";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CenterSlider from "../../components/CenterSlider";

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "rebass/styled-components";
-import useScroll from "../hooks/useScroll";
+import useScroll from "../../hooks/useScroll";
 import About from "../sections/About";
 import Member from "../sections/Member";
 import News from "../sections/News";

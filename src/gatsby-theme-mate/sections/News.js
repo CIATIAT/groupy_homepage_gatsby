@@ -6,7 +6,7 @@ import Triangle from "gatsby-theme-mate/src/components/Triangle";
 import { useMediumQuery } from "gatsby-theme-mate/src/queries/useMediumQuery";
 import { Post } from "gatsby-theme-mate/src/components/Post";
 import { SECTION } from "../utils/constants";
-import useIsSp from "../hooks/useIsSp";
+import useIsSp from "../../hooks/useIsSp";
 import CenterSlider from "../../components/CenterSlider";
 
 const Writing = () => {

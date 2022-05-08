@@ -9,7 +9,7 @@ import { getSectionHref } from "gatsby-theme-mate/src/utils/helpers";
 import { Fade } from "react-awesome-reveal";
 import BG from "/sampleBG.jpeg";
 import bgVideo from "/bgVideo.mp4";
-import useOpacityChange from "../hooks/useOpacityChange";
+import useOpacityChange from "../../hooks/useOpacityChange";
 import styled from "styled-components";
 
 const centerHorizontally = { marginRight: "auto", marginLeft: "auto" };
@@ -99,7 +99,7 @@ const LandingPage = () => {
           width: "100%"
         }}
       >
-        <video poster={BG} playsInline muted autoPlay loop>
+        <video poster={BG} playsInline muted autoPlay loop style={{ height: "100vh" }}>
           <source src={bgVideo} type="video/mp4" />
           <p>動画を再生できる環境ではありません。</p>
         </video>
