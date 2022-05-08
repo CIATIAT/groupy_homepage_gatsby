@@ -13,7 +13,7 @@ import BG from "/sampleBG.jpeg";
 import useOpacityChange from "../hooks/useOpacityChange";
 
 const centerHorizontally = { marginRight: "auto", marginLeft: "auto" };
-const DISAPPER_THRESHOLD = 725;
+const DISAPPER_THRESHOLD = 400;
 
 const LandingPage = () => {
   const { name, roles, socialLinks, deterministic } = useSiteQuery();
