@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import { useRecoilState } from "recoil";
-import { stageState } from "../../atoms";
 
 const useScroll = () => {
-  const [stage, setStage] = useRecoilState(stageState);
+  const [stage, setStage] = useState<"about" | "member" | "news">("about");
   const threshold = window.innerHeight; // window.innerHeightの半分の値分スクロールしたらコンテンツを入れ替える
 
   const handleScroll = () => {
