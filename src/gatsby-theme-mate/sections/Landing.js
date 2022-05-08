@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
-import { Heading, Flex, Box, Text } from "rebass/styled-components";
+import React from "react";
+import { Heading, Flex, Box, Text, Link } from "rebass/styled-components";
 import TextLoop from "react-text-loop";
 import Section from "../components/Section";
-import SocialLink from "../components/SocialLink";
 import ScrollIcon from "../components/ScrollIcon";
-import Triangle from "gatsby-theme-mate/src/components/Triangle";
 import { useSiteQuery } from "gatsby-theme-mate/src/queries/useSiteQuery";
 import { SECTION } from "../utils/constants";
 import { getSectionHref } from "gatsby-theme-mate/src/utils/helpers";
@@ -16,7 +14,7 @@ const centerHorizontally = { marginRight: "auto", marginLeft: "auto" };
 const DISAPPER_THRESHOLD = 400;
 
 const LandingPage = () => {
-  const { name, roles, socialLinks, deterministic } = useSiteQuery();
+  const { name, roles, deterministic } = useSiteQuery();
   const opacity = useOpacityChange(DISAPPER_THRESHOLD);
 
   return (
@@ -51,9 +49,9 @@ const LandingPage = () => {
           </Fade>
           <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
             <Fade direction="right" triggerOnce cascade damping={0.5}>
-              <a
+              <Link
                 href=""
-                style={{
+                sx={{
                   color: "#fff",
                   border: "solid",
                   borderColor: "#fff",
@@ -78,7 +76,7 @@ const LandingPage = () => {
                 }}
               >
                 インストールはこちら
-              </a>
+              </Link>
               {/* {socialLinks.map((sl) => (
             <Box mx={3} fontSize={[5, 6, 6]} key={sl.name}>
               <SocialLink {...sl} />
