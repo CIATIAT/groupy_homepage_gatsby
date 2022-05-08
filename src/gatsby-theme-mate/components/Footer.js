@@ -1,20 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Text, Box, Flex } from 'rebass/styled-components';
-import { Fade } from 'react-awesome-reveal';
-import SocialLink from './SocialLink';
-import Link from 'gatsby-theme-mate/src/components/Link';
-import { useSiteQuery } from 'gatsby-theme-mate/src/queries/useSiteQuery';
-import { CONTENTFUL_URL, GATSBY_URL, NETLIFY_URL } from 'gatsby-theme-mate/src/utils/constants';
-
-
-
+import React from "react";
+import styled from "styled-components";
+import { Text, Box, Flex } from "rebass/styled-components";
+import { Fade } from "react-awesome-reveal";
+import SocialLink from "./SocialLink";
+import Link from "gatsby-theme-mate/src/components/Link";
+import { useSiteQuery } from "gatsby-theme-mate/src/queries/useSiteQuery";
+import { CONTENTFUL_URL, GATSBY_URL, NETLIFY_URL } from "gatsby-theme-mate/src/utils/constants";
 
 const Footer = () => {
   const { name, socialLinks } = useSiteQuery();
 
   return (
-    <Box p={[2, 3]} backgroundColor="color1" id="footer" as="footer">
+    <Box p={[2, 3]} backgroundColor="color4" id="footer" as="footer" sx={{ position: "relative" }}>
       <FooterContainer>
         <Fade direction="left" triggerOnce>
           <Text fontSize={[1, 2]} color="background">
@@ -49,7 +46,7 @@ const FooterContainer = styled.div`
   align-items: center;
   margin: auto;
 
-  @media (max-width: 400px) {
+  @media (max-width: 425px) {
     flex-direction: column-reverse;
 
     & > * {
