@@ -1,10 +1,10 @@
-import React, { ReactNode } from 'react';
-import styled from 'styled-components';
-import { Heading } from 'rebass/styled-components';
-import { Slide } from 'react-awesome-reveal';
-import Link from 'gatsby-theme-mate/src/components/Link';
-import { SECTION } from 'gatsby-theme-mate/src/utils/constants';
-import { getSectionHref } from 'gatsby-theme-mate/src/utils/helpers';
+import React, { ReactNode } from "react";
+import styled from "styled-components";
+import { Heading } from "rebass/styled-components";
+import { Fade } from "react-awesome-reveal";
+import Link from "gatsby-theme-mate/src/components/Link";
+import { SECTION } from "gatsby-theme-mate/src/utils/constants";
+import { getSectionHref } from "gatsby-theme-mate/src/utils/helpers";
 
 type ContainerProps = {
   id?: SECTION;
@@ -12,12 +12,8 @@ type ContainerProps = {
   Background?: () => JSX.Element;
 };
 
-const Container = ({
-  id,
-  children,
-  Background = DefaultBackground,
-}: ContainerProps) => (
-  <section id={id && getSectionHref(id)} style={{ position: 'relative' }}>
+const Container = ({ id, children, Background = DefaultBackground }: ContainerProps) => (
+  <section id={id && getSectionHref(id)} style={{ position: "relative" }}>
     <Background />
     <SectionContainer>{children}</SectionContainer>
   </section>
@@ -30,18 +26,18 @@ type HeaderProps = {
 };
 
 const Header = ({ name, icon, label }: HeaderProps) => (
-  <Slide direction="right" triggerOnce>
+  <Fade triggerOnce>
     <Heading color="text" mb={50}>
       <Link selected>
         {name}
         {icon && (
-          <span role="img" aria-label={label} style={{ marginLeft: '10px' }}>
+          <span role="img" aria-label={label} style={{ marginLeft: "10px" }}>
             {icon}
           </span>
         )}
       </Link>
     </Heading>
-  </Slide>
+  </Fade>
 );
 
 const SectionContainer = styled.div`
@@ -65,5 +61,5 @@ const DefaultBackground = () => <div />;
 
 export default {
   Container,
-  Header,
+  Header
 };
