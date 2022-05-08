@@ -46,7 +46,7 @@ const FooterContainer = styled.div`
   align-items: center;
   margin: auto;
 
-  @media (max-width: 400px) {
+  @media (max-width: 425px) {
     flex-direction: column-reverse;
 
     & > * {
