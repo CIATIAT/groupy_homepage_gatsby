@@ -20,8 +20,14 @@ const LandingPage = () => {
   const opacity = useOpacityChange(DISAPPER_THRESHOLD);
 
   return (
-    <Box>
-      <Box>
+    <Box sx={{ position: "relative" }}>
+      <VideoBox>
+        <Video poster={webBG} playsInline muted autoPlay loop>
+          <source src={bgVideo} type="video/mp4" />
+          <p>動画を再生できる環境ではありません。</p>
+        </Video>
+      </VideoBox>
+      <Box sx={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "100%" }}>
         <Section.Container id={SECTION.home}>
           <Box sx={{ opacity }}>
             <Fade direction="down" triggerOnce>
@@ -90,34 +96,36 @@ const LandingPage = () => {
           <ScrollIcon href={`#${getSectionHref(SECTION.about)}`} />
         </Section.Container>
       </Box>
-      <VideoBox
-        sx={{
-          position: "fixed",
-          zIndex: "-1",
-          top: "0",
-          left: "0",
-          width: "100%"
-        }}
-      >
-        <video poster={webBG} playsInline muted autoPlay loop style={{ height: "100vh" }}>
-          <source src={bgVideo} type="video/mp4" />
-          <p>動画を再生できる環境ではありません。</p>
-        </video>
-      </VideoBox>
     </Box>
   );
 };
 
 const VideoBox = styled(Box)`
-  &:before {
+  position: relative;
+  zindex: -1;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  &:after {
     background-color: rgba(0, 0, 0, 0.4);
     content: "";
     height: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
   }
+`;
+
+const Video = styled.video`
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 `;
 
 const Background = () => (
