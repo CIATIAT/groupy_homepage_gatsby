@@ -11,7 +11,7 @@ const Footer = () => {
   const { name, socialLinks } = useSiteQuery();
 
   return (
-    <Box p={[2, 3]} backgroundColor="color1" id="footer" as="footer" sx={{ position: "relative" }}>
+    <Box p={[2, 3]} backgroundColor="color4" id="footer" as="footer" sx={{ position: "relative" }}>
       <FooterContainer>
         <Fade direction="left" triggerOnce>
           <Text fontSize={[1, 2]} color="background">
