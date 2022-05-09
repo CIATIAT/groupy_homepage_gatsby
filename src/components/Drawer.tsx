@@ -6,6 +6,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { SECTION } from "../gatsby-theme-mate/utils/constants";
 
 import "react-modern-drawer/dist/index.css";
+import { isBrowser } from "../utils";
 
 const Drawer = ({
   isDrawerOpened,
@@ -43,7 +44,7 @@ const Drawer = ({
                 href={`#${id}`}
                 sx={{ textDecoration: "none", fontWeight: "semibold" }}
                 onClick={() => {
-                  window.scrollTo({ top: window.innerHeight * (index + 1), behavior: "smooth" });
+                  if (isBrowser()) window.scrollTo({ top: window.innerHeight * (index + 1), behavior: "smooth" });
                   setIsDrawerOpened(false);
                 }}
               >

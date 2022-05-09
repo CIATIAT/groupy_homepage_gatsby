@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { isBrowser } from "../utils";
 
 const useScroll = () => {
   const [stage, setStage] = useState<"about" | "member" | "news">("about");
-  const threshold = window.innerHeight;
 
   const handleScroll = () => {
+    if (!isBrowser()) return;
+    const threshold = window.innerHeight;
     const scrollAmountFromContents = window.pageYOffset - window.innerHeight;
     if (scrollAmountFromContents < threshold) {
       setStage("about");
@@ -15,6 +17,7 @@ const useScroll = () => {
     }
   };
   useEffect(() => {
+    if (!isBrowser()) return;
     window.addEventListener("scroll", handleScroll);
   }, []);
 

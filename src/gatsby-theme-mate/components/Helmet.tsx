@@ -1,8 +1,8 @@
-import React from 'react';
-import { Helmet as ReactHelmet } from 'react-helmet';
-import { withTheme } from 'styled-components';
-import { Theme } from 'gatsby-theme-mate/src/types';
-import { useHelmetQuery } from 'gatsby-theme-mate/src/queries/useHelmetQuery';
+import React from "react";
+import { Helmet as ReactHelmet } from "react-helmet";
+import { withTheme } from "styled-components";
+import { Theme } from "gatsby-theme-mate/src/types";
+import { useHelmetQuery } from "gatsby-theme-mate/src/queries/useHelmetQuery";
 
 type Props = {
   theme: Theme;
@@ -11,15 +11,16 @@ type Props = {
 const Helmet = ({ theme }: Props) => {
   const { description, profile } = useHelmetQuery();
   const title = `Groupy株式会社`;
-  const domain = `groupy.space`
+  const domain = `groupy.space`;
 
   return (
-    <ReactHelmet htmlAttributes={{ lang: 'jp' }}>
+    <ReactHelmet htmlAttributes={{ lang: "jp" }}>
       <meta charSet="utf-8" />
       <title>Groupy Inc.</title>
       <meta name="description" content={description} />
       <link rel="shortcut icon" href={`https:${domain}${profile.favicon32.src}`} />
-      <meta name="theme-color" content={theme.colors.background} />
+      <meta name="theme-color" content={theme.colors.groupyPurple} />
+      <meta name="apple-mobile-web-app-status-bar-style" content={theme.colors.groupyPurple} />
       <meta name="image" content={`https:${domain}${profile.favicon32.src}`} />
       <meta itemProp="name" content={title} />
       <meta itemProp="description" content={description} />
@@ -35,23 +36,9 @@ const Helmet = ({ theme }: Props) => {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`https:${domain}${profile.bigIcon.src}`} />
       <meta name="twitter:image:src" content={`https:${domain}${profile.bigIcon.src}`} />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href={`https:${domain}${profile.appleIcon.src}`}
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href={`https:${domain}${profile.favicon32.src}`}
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href={`https:${domain}${profile.favicon16.src}`}
-      />
+      <link rel="apple-touch-icon" sizes="180x180" href={`https:${domain}${profile.appleIcon.src}`} />
+      <link rel="icon" type="image/png" sizes="32x32" href={`https:${domain}${profile.favicon32.src}`} />
+      <link rel="icon" type="image/png" sizes="16x16" href={`https:${domain}${profile.favicon16.src}`} />
     </ReactHelmet>
   );
 };
