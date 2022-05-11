@@ -7,8 +7,8 @@ import { useSiteQuery } from "gatsby-theme-mate/src/queries/useSiteQuery";
 import { SECTION } from "../utils/constants";
 import { getSectionHref } from "gatsby-theme-mate/src/utils/helpers";
 import { Fade } from "react-awesome-reveal";
-import webBG from "/webBG.jpg";
-import bgVideo from "/bgVideo.mp4";
+import webBG from "/webBG1080.jpg";
+import bgVideo from "/bgVideo1080.mp4";
 import useOpacityChange from "../../hooks/useOpacityChange";
 import styled from "styled-components";
 
