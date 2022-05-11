@@ -8,6 +8,7 @@ import { SECTION } from "../utils/constants";
 import { getSectionHref } from "gatsby-theme-mate/src/utils/helpers";
 import { Fade } from "react-awesome-reveal";
 import webBG from "/webBG1080.jpg";
+import webBGwebp from "/webBG1080.webp";
 import bgVideo from "/bgVideo1080.mp4";
 import useOpacityChange from "../../hooks/useOpacityChange";
 import styled from "styled-components";
@@ -22,7 +23,7 @@ const LandingPage = () => {
   return (
     <Box sx={{ position: "relative" }}>
       <VideoBox>
-        <Video poster={webBG} playsInline muted autoPlay loop>
+        <Video poster={webBGwebp} playsInline muted autoPlay loop>
           <source src={bgVideo} type="video/mp4" />
           <p>動画を再生できる環境ではありません。</p>
         </Video>
