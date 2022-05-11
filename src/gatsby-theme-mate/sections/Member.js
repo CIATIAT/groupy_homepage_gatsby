@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 import Section from "gatsby-theme-mate/src/components/Section";
 import { CardContainer } from "gatsby-theme-mate/src/components/Card";
 import Triangle from "gatsby-theme-mate/src/components/Triangle";
-import Project from "gatsby-theme-mate/src/components/Project";
+import Project from "../../components/Project";
 import { useProjectsQuery } from "gatsby-theme-mate/src/queries/useProjectsQuery";
 import { SECTION } from "../utils/constants";
 import useIsSp from "../../hooks/useIsSp";
