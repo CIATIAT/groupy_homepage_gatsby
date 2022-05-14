@@ -59,7 +59,7 @@ const LandingPage = () => {
             <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
               <Fade direction="right" triggerOnce cascade damping={0.5}>
                 <Link
-                  href=""
+                  href="https://groupyapp.page.link/store"
                   sx={{
                     color: "#fff",
                     border: "solid",
