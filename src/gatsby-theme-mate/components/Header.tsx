@@ -42,7 +42,11 @@ const Header = () => {
             <Box onClick={() => setIsDrawerOpened(true)}>
               <FontAwesomeIcon icon={faBars} size="2x" color="white" />
             </Box>
-            <Drawer isDrawerOpened={isDrawerOpened} setIsDrawerOpened={setIsDrawerOpened} />
+            <Drawer
+              isDrawerOpened={isDrawerOpened}
+              setIsDrawerOpened={setIsDrawerOpened}
+              handleLinkClick={handleLinkClick}
+            />
           </Box>
         ) : (
           <Flex mr={[0, 3, 5]}>

@@ -10,10 +10,12 @@ import { isBrowser } from "../utils";
 
 const Drawer = ({
   isDrawerOpened,
-  setIsDrawerOpened
+  setIsDrawerOpened,
+  handleLinkClick
 }: {
   isDrawerOpened: boolean;
   setIsDrawerOpened: Dispatch<SetStateAction<boolean>>;
+  handleLinkClick: (index: number) => void;
 }) => {
   return (
     <ModernDrawer
@@ -44,7 +46,7 @@ const Drawer = ({
                 href={`#${id}`}
                 sx={{ textDecoration: "none", fontWeight: "semibold" }}
                 onClick={() => {
-                  if (isBrowser()) window.scrollTo({ top: window.innerHeight * (index + 1), behavior: "smooth" });
+                  handleLinkClick(index);
                   setIsDrawerOpened(false);
                 }}
               >
