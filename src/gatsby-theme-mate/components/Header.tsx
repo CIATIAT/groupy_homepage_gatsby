@@ -9,11 +9,20 @@ import useIsSp from "../../hooks/useIsSp";
 import Drawer from "../../components/Drawer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { isBrowser } from "../../utils";
 
 const Header = () => {
   const { profile } = useHelmetQuery();
   const isSp = useIsSp();
   const [isDrawerOpened, setIsDrawerOpened] = useState<boolean>(false);
+
+  const handleLinkClick = (index: number) => {
+    if (isBrowser()) {
+      const HEIGHT_OF_LANDING = window.innerHeight;
+      const EXTRA_ROOM = window.innerHeight / 4;
+      window.scrollTo({ top: HEIGHT_OF_LANDING + EXTRA_ROOM + window.innerHeight * index, behavior: "smooth" });
+    }
+  };
 
   return (
     <StyledHeadroom>
@@ -39,9 +48,9 @@ const Header = () => {
           <Flex mr={[0, 3, 5]}>
             {(Object.keys(SECTION) as Array<keyof typeof SECTION>)
               .filter((id) => id !== "home")
-              .map((id) => (
+              .map((id, index) => (
                 <Box key={id} ml={[2, 3]} color="background" fontSize={[2, 3]}>
-                  <Link href={`/#${id}`} tabIndex={0}>
+                  <Link href={`/#${id}`} tabIndex={0} onClick={() => handleLinkClick(index)}>
                     {SECTION[id]}
                   </Link>
                 </Box>
