@@ -18,7 +18,8 @@ const Header = () => {
 
   const handleLinkClick = (index: number) => {
     if (isBrowser()) {
-      const HEIGHT_OF_LANDING = window.innerHeight;
+      const HEIGHT_OF_LANDING = window.innerHeight; // Landingコンポーネントのheightを取得（いまのところinnerHeight）
+      // aタグで押した後、少しでも上にスクロールしてしまうと表示される画面が変わってしまうため、スクロール分に余裕を持たせる
       const EXTRA_ROOM = window.innerHeight / 4;
       window.scrollTo({ top: HEIGHT_OF_LANDING + EXTRA_ROOM + window.innerHeight * index, behavior: "smooth" });
     }
