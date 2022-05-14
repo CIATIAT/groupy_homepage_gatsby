@@ -9,7 +9,7 @@ import Triangle from "gatsby-theme-mate/src/components/Triangle";
 export default () => (
   <Section.Container Background={Background}>
     <Box height={80}></Box>
-    <Section.Header name={"PCでのご利用は頂けません。"} />
+    <Section.Header name={"PCではご利用いただけません"} />
     <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
       <Box width={[1, 1, 3 / 5]} px={[1, 2, 4]}>
         <Fade direction="down" triggerOnce>
