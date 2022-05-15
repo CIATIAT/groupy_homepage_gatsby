@@ -42,7 +42,6 @@ const Layout = ({ children }: Props) => (
   <main>
     <ThemeProvider theme={theme as Theme}>
       <GlobalStyle />
-      <Helmet />
       {children}
     </ThemeProvider>
   </main>

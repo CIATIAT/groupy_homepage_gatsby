@@ -19,7 +19,7 @@ const Helmet = (props: Props) => {
   return (
     <ReactHelmet htmlAttributes={{ lang: "ja" }}>
       <meta charSet="utf-8" />
-      <title>Groupy Inc.</title>
+      <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="shortcut icon" href={`https:${domain}${query.profile.favicon32.src}`} />
       <meta name="theme-color" content={"#000000"} data-react-helmet="true" />
