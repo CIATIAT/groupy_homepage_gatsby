@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 // Layout components
 import Layout from "../components/Layout";
