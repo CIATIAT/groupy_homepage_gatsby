@@ -17,7 +17,7 @@ const Helmet = (props: Props) => {
   const domain = "groupy.space";
 
   return (
-    <ReactHelmet htmlAttributes={{ lang: "jp" }}>
+    <ReactHelmet htmlAttributes={{ lang: "ja" }}>
       <meta charSet="utf-8" />
       <title>Groupy Inc.</title>
       <meta name="description" content={description} />
