@@ -6,34 +6,37 @@ import { useHelmetQuery } from "gatsby-theme-mate/src/queries/useHelmetQuery";
 
 type Props = {
   theme: Theme;
+  title: string;
+  description: string;
 };
 
-const Helmet = ({ theme }: Props) => {
+const Helmet = (props: Props) => {
   const query = useHelmetQuery();
-  const title = `Groupy株式会社`;
-  const domain = `groupy.space`;
+  const title = props.title || "Groupy株式会社";
+  const description = props.description || query.description;
+  const domain = "groupy.space";
 
   return (
     <ReactHelmet htmlAttributes={{ lang: "jp" }}>
       <meta charSet="utf-8" />
       <title>Groupy Inc.</title>
-      <meta name="description" content={query.description} />
+      <meta name="description" content={description} />
       <link rel="shortcut icon" href={`https:${domain}${query.profile.favicon32.src}`} />
       <meta name="theme-color" content={"#000000"} data-react-helmet="true" />
-      <meta name="apple-mobile-web-app-status-bar-style" content={theme.colors.groupyPurple} />
+      <meta name="apple-mobile-web-app-status-bar-style" content={props.theme.colors.groupyPurple} />
       <meta name="image" content={`https:${domain}${query.profile.favicon32.src}`} />
       <meta itemProp="name" content={title} />
-      <meta itemProp="description" content={query.description} />
+      <meta itemProp="description" content={description} />
       <meta itemProp="image" content={`https:${domain}${query.profile.favicon32.src}`} />
       <meta name="og:title" content={title} />
-      <meta name="og:description" content={query.description} />
+      <meta name="og:description" content={description} />
       <meta name="og:image" content={`https:${domain}${query.profile.bigIcon.src}`} />
       <meta name="og:site_name" content={title} />
       <meta name="og:locale" content="ja" />
       <meta name="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={query.description} />
+      <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`https:${domain}${query.profile.bigIcon.src}`} />
       <meta name="twitter:image:src" content={`https:${domain}${query.profile.bigIcon.src}`} />
       <link rel="apple-touch-icon" sizes="180x180" href={`https:${domain}${query.profile.appleIcon.src}`} />
