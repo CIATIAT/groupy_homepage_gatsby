@@ -7,8 +7,6 @@ import Project from "../../components/Project";
 import { useProjectsQuery } from "gatsby-theme-mate/src/queries/useProjectsQuery";
 import { SECTION } from "../utils/constants";
 import useIsSp from "../../hooks/useIsSp";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const Projects = () => {
