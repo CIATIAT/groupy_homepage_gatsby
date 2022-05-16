@@ -39,6 +39,7 @@
     "react-modern-drawer": "^1.1.1",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
+    "swiper": "^8.1.5",
     "yarn": "^1.22.18"
   },
   "devDependencies": {
