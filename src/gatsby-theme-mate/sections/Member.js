@@ -18,7 +18,7 @@ const Projects = () => {
 
       {isSp ? (
         <Fade triggerOnce>
-          <Swiper spaceBetween={5} slidesPerView={1.1}>
+          <Swiper spaceBetween={5} slidesPerView={projects.length > 1 ? 1.1 : 1}>
             {projects.map((p, i) => (
               <SwiperSlide style={{ padding: "5px 0" }}>
                 <Project {...p} key={i} />
