@@ -3,8 +3,8 @@ import { Theme } from "gatsby-theme-mate/src/types";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { loadIcons } from "gatsby-theme-mate/src/utils/icons";
 import { theme } from "gatsby-theme-mate/src/theme";
-import Helmet from "./Helmet";
 import "tippy.js/dist/tippy.css";
+import "swiper/css";
 
 declare module "styled-components" {
   export interface DefaultTheme extends Theme {}

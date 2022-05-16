@@ -7,7 +7,7 @@ import { useMediumQuery } from "gatsby-theme-mate/src/queries/useMediumQuery";
 import { Post } from "gatsby-theme-mate/src/components/Post";
 import { SECTION } from "../utils/constants";
 import useIsSp from "../../hooks/useIsSp";
-import CenterSlider from "../../components/CenterSlider";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Writing = () => {
   const { posts } = useMediumQuery();
@@ -18,11 +18,13 @@ const Writing = () => {
       <Section.Header name={SECTION.news} label="writing" />
       {isSp ? (
         <Fade triggerOnce>
-          <CenterSlider>
+          <Swiper spaceBetween={5} slidesPerView={posts.length > 1 ? 1.1 : 1}>
             {posts.map((p) => (
-              <Post {...p} key={p.url} />
+              <SwiperSlide style={{ padding: "5px 0" }}>
+                <Post {...p} key={p.url} />
+              </SwiperSlide>
             ))}
-          </CenterSlider>
+          </Swiper>
         </Fade>
       ) : (
         <CardContainer minWidth="300px">

@@ -1,5 +1,0 @@
-/* react slickのcssがグローバルでしかいじれないため。 */
-/* box-shadowがうまく見えるようにするため */
-.slick-slide {
-	padding: 5px 0;
-}
