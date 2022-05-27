@@ -7,11 +7,12 @@ import { useSiteQuery } from "gatsby-theme-mate/src/queries/useSiteQuery";
 import { SECTION } from "../utils/constants";
 import { getSectionHref } from "gatsby-theme-mate/src/utils/helpers";
 import { Fade } from "react-awesome-reveal";
-import webBG from "/webBG1080.jpg";
+import mobileBg from "/mobileBg.webp";
 import webBGwebp from "/webBG1080.webp";
 import bgVideo from "/bgVideo1080.mp4";
 import useOpacityChange from "../../hooks/useOpacityChange";
 import styled from "styled-components";
+import useIsSp from "../../hooks/useIsSp";
 
 const centerHorizontally = { marginRight: "auto", marginLeft: "auto" };
 const DISAPPER_THRESHOLD = 400;
@@ -19,14 +20,19 @@ const DISAPPER_THRESHOLD = 400;
 const LandingPage = () => {
   const { name, roles, deterministic } = useSiteQuery();
   const opacity = useOpacityChange(DISAPPER_THRESHOLD);
+  const isSp = useIsSp();
 
   return (
     <Box sx={{ position: "relative" }}>
       <VideoBox>
-        <Video poster={webBGwebp} playsInline muted autoPlay loop>
-          <source src={bgVideo} type="video/mp4" />
-          <p>動画を再生できる環境ではありません。</p>
-        </Video>
+        {isSp ? (
+          <MobileBg src={mobileBg} alt="groupyのイメージ画像" />
+        ) : (
+          <Video poster={webBGwebp} playsInline muted autoPlay loop>
+            <source src={bgVideo} type="video/mp4" />
+            <p>動画を再生できる環境ではありません。</p>
+          </Video>
+        )}
       </VideoBox>
       <Box sx={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "100%" }}>
         <Section.Container id={SECTION.home}>
@@ -100,6 +106,15 @@ const LandingPage = () => {
     </Box>
   );
 };
+
+const MobileBg = styled.img`
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+`;
 
 const VideoBox = styled(Box)`
   position: relative;
