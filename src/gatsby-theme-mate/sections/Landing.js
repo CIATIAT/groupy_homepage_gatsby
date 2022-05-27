@@ -7,12 +7,12 @@ import { useSiteQuery } from "gatsby-theme-mate/src/queries/useSiteQuery";
 import { SECTION } from "../utils/constants";
 import { getSectionHref } from "gatsby-theme-mate/src/utils/helpers";
 import { Fade } from "react-awesome-reveal";
-import mobileBg from "/mobileBg.webp";
 import webBGwebp from "/webBG1080.webp";
 import bgVideo from "/bgVideo1080.mp4";
 import useOpacityChange from "../../hooks/useOpacityChange";
 import styled from "styled-components";
 import useIsSp from "../../hooks/useIsSp";
+import { StaticImage } from "gatsby-plugin-image";
 
 const centerHorizontally = { marginRight: "auto", marginLeft: "auto" };
 const DISAPPER_THRESHOLD = 400;
@@ -26,7 +26,20 @@ const LandingPage = () => {
     <Box sx={{ position: "relative" }}>
       <VideoBox>
         {isSp ? (
-          <MobileBg src={mobileBg} alt="groupyのイメージ画像" width={9} height={16} />
+          <StaticImage
+            src="../../images/mobileBg.webp"
+            alt="groupyのイメージ画像"
+            style={{
+              minWidth: "100%",
+              minHeight: "100%",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translateX(-50%) translateY(-50%)"
+            }}
+            loading="eager"
+            placeholder="blurred"
+          />
         ) : (
           <Video poster={webBGwebp} playsInline muted autoPlay loop>
             <source src={bgVideo} type="video/mp4" />
@@ -92,11 +105,6 @@ const LandingPage = () => {
                 >
                   インストールはこちら
                 </Link>
-                {/* {socialLinks.map((sl) => (
-            <Box mx={3} fontSize={[5, 6, 6]} key={sl.name}>
-              <SocialLink {...sl} />
-            </Box>
-          ))} */}
               </Fade>
             </Flex>
           </Box>
@@ -106,15 +114,6 @@ const LandingPage = () => {
     </Box>
   );
 };
-
-const MobileBg = styled.img`
-  min-width: 100%;
-  min-height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-`;
 
 const VideoBox = styled(Box)`
   position: relative;
@@ -147,51 +146,5 @@ const Video = styled.video`
     object-fit: cover;
   }
 `;
-
-const Background = () => (
-  <>
-    {/* <img
-      src={BG}
-      alt="Logo"
-      width={["100%", "100%"]}
-      style={{
-        position: "absolute",
-        // paddingTop: 'calc(3000 / 4000 * 100%)',
-        backgroundPosition: "centercenter",
-        backgroundSize: "cover",
-        backgroundAttachment: "fixed",
-        backgroundRepeat: "no-repeat"
-      }}
-    /> */}
-  </>
-  /* <Fade direction="left" triggerOnce>
-    <Triangle
-      color="muted"
-      height={['35vh', '80vh']}
-      width={['95vw', '60vw']}
-    />
-  </Fade>
-  <Fade direction="left" triggerOnce>
-    <Triangle
-      color="secondary"
-      height={['38vh', '80vh']}
-      width={['50vw', '35vw']}
-    />
-  </Fade>
-  <Fade direction="right" triggerOnce>
-    <Triangle
-      color="primary"
-      height={['25vh', '35vh']}
-      width={['75vw', '60vw']}
-      position="top-right"
-    />
-  </Fade>
-    <Triangle
-      color="muted"
-      height={['20vh', '20vh']}
-      width={['100vw', '100vw']}
-      position="bottom-left"
-    /> */
-);
 
 export default LandingPage;
