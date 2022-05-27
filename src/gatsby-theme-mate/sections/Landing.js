@@ -26,7 +26,7 @@ const LandingPage = () => {
     <Box sx={{ position: "relative" }}>
       <VideoBox>
         {isSp ? (
-          <MobileBg src={mobileBg} alt="groupyのイメージ画像" />
+          <MobileBg src={mobileBg} alt="groupyのイメージ画像" width={9} height={16} />
         ) : (
           <Video poster={webBGwebp} playsInline muted autoPlay loop>
             <source src={bgVideo} type="video/mp4" />
