@@ -9,11 +9,21 @@ import useIsSp from "../../hooks/useIsSp";
 import Drawer from "../../components/Drawer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { isBrowser } from "../../utils";
 
 const Header = () => {
   const { profile } = useHelmetQuery();
   const isSp = useIsSp();
   const [isDrawerOpened, setIsDrawerOpened] = useState<boolean>(false);
+
+  const handleLinkClick = (index: number) => {
+    if (isBrowser()) {
+      const HEIGHT_OF_LANDING = window.innerHeight; // Landingコンポーネントのheightを取得（いまのところinnerHeight）
+      // aタグで押した後、少しでも上にスクロールしてしまうと表示される画面が変わってしまうため、スクロール分に余裕を持たせる
+      const EXTRA_ROOM = window.innerHeight / 4;
+      window.scrollTo({ top: HEIGHT_OF_LANDING + EXTRA_ROOM + window.innerHeight * index, behavior: "smooth" });
+    }
+  };
 
   return (
     <StyledHeadroom>
@@ -33,15 +43,19 @@ const Header = () => {
             <Box onClick={() => setIsDrawerOpened(true)}>
               <FontAwesomeIcon icon={faBars} size="2x" color="white" />
             </Box>
-            <Drawer isDrawerOpened={isDrawerOpened} setIsDrawerOpened={setIsDrawerOpened} />
+            <Drawer
+              isDrawerOpened={isDrawerOpened}
+              setIsDrawerOpened={setIsDrawerOpened}
+              handleLinkClick={handleLinkClick}
+            />
           </Box>
         ) : (
           <Flex mr={[0, 3, 5]}>
             {(Object.keys(SECTION) as Array<keyof typeof SECTION>)
               .filter((id) => id !== "home")
-              .map((id) => (
+              .map((id, index) => (
                 <Box key={id} ml={[2, 3]} color="background" fontSize={[2, 3]}>
-                  <Link href={`/#${id}`} tabIndex={0}>
+                  <Link href={`/#${id}`} tabIndex={0} onClick={() => handleLinkClick(index)}>
                     {SECTION[id]}
                   </Link>
                 </Box>
@@ -59,7 +73,7 @@ const StyledHeadroom = styled(Headroom)`
   }
 
   .headroom--pinned {
-    background-color: black;
+    background-color: ${({ theme }) => theme.colors.groupyPurple};
   }
 
   position: absolute;

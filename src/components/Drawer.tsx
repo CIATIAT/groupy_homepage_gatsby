@@ -6,13 +6,16 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { SECTION } from "../gatsby-theme-mate/utils/constants";
 
 import "react-modern-drawer/dist/index.css";
+import { isBrowser } from "../utils";
 
 const Drawer = ({
   isDrawerOpened,
-  setIsDrawerOpened
+  setIsDrawerOpened,
+  handleLinkClick
 }: {
   isDrawerOpened: boolean;
   setIsDrawerOpened: Dispatch<SetStateAction<boolean>>;
+  handleLinkClick: (index: number) => void;
 }) => {
   return (
     <ModernDrawer
@@ -43,7 +46,7 @@ const Drawer = ({
                 href={`#${id}`}
                 sx={{ textDecoration: "none", fontWeight: "semibold" }}
                 onClick={() => {
-                  window.scrollTo({ top: window.innerHeight * (index + 1), behavior: "smooth" });
+                  handleLinkClick(index);
                   setIsDrawerOpened(false);
                 }}
               >

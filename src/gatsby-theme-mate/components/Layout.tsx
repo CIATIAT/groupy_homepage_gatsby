@@ -1,12 +1,12 @@
-import React, { ReactNode } from 'react';
-import { Theme } from 'gatsby-theme-mate/src/types';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { loadIcons } from 'gatsby-theme-mate/src/utils/icons';
-import { theme } from 'gatsby-theme-mate/src/theme';
-import Helmet from './Helmet';
-import 'tippy.js/dist/tippy.css';
+import React, { ReactNode } from "react";
+import { Theme } from "gatsby-theme-mate/src/types";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { loadIcons } from "gatsby-theme-mate/src/utils/icons";
+import { theme } from "gatsby-theme-mate/src/theme";
+import "tippy.js/dist/tippy.css";
+import "swiper/css";
 
-declare module 'styled-components' {
+declare module "styled-components" {
   export interface DefaultTheme extends Theme {}
 }
 
@@ -42,7 +42,6 @@ const Layout = ({ children }: Props) => (
   <main>
     <ThemeProvider theme={theme as Theme}>
       <GlobalStyle />
-      <Helmet />
       {children}
     </ThemeProvider>
   </main>
