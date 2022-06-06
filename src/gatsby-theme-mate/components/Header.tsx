@@ -5,16 +5,15 @@ import styled from "styled-components";
 import Link from "gatsby-theme-mate/src/components/Link";
 import { useHelmetQuery } from "gatsby-theme-mate/src/queries/useHelmetQuery";
 import { SECTION } from "../utils/constants";
-import useIsSp from "../../hooks/useIsSp";
 import Drawer from "../../components/Drawer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { isBrowser } from "../../utils";
+import { useBreakpoint } from "gatsby-plugin-breakpoints";
 
 const Header = () => {
-  const { profile } = useHelmetQuery();
-  const isSp = useIsSp();
   const [isDrawerOpened, setIsDrawerOpened] = useState<boolean>(false);
+  const breakpoints = useBreakpoint();
 
   const handleLinkClick = (index: number) => {
     if (isBrowser()) {
@@ -38,7 +37,7 @@ const Header = () => {
             <h1>Groupy Inc.</h1>
           </Flex>
         </RebassLink>
-        {isSp ? (
+        {breakpoints.sm ? (
           <Box>
             <Box onClick={() => setIsDrawerOpened(true)}>
               <FontAwesomeIcon icon={faBars} size="2x" color="white" />

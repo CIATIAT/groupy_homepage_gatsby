@@ -11,8 +11,8 @@ import webBGwebp from "/webBG1080.webp";
 import bgVideo from "/bgVideo1080.mp4";
 import useOpacityChange from "../../hooks/useOpacityChange";
 import styled from "styled-components";
-import useIsSp from "../../hooks/useIsSp";
 import { StaticImage } from "gatsby-plugin-image";
+import { useBreakpoint } from "gatsby-plugin-breakpoints";
 
 const centerHorizontally = { marginRight: "auto", marginLeft: "auto" };
 const DISAPPER_THRESHOLD = 400;
@@ -20,12 +20,12 @@ const DISAPPER_THRESHOLD = 400;
 const LandingPage = () => {
   const { name, roles, deterministic } = useSiteQuery();
   const opacity = useOpacityChange(DISAPPER_THRESHOLD);
-  const isSp = useIsSp();
+  const breakpoints = useBreakpoint();
 
   return (
     <Box sx={{ position: "relative" }}>
       <VideoBox>
-        {isSp ? (
+        {breakpoints.sm ? (
           <StaticImage
             src="../../images/mobileBg.webp"
             alt="groupyのイメージ画像"
