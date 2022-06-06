@@ -1,4 +1,4 @@
-const { ACCESS_TOKEN, SPACE_ID, ANALYTICS_ID } = process.env;
+const { ACCESS_TOKEN, SPACE_ID, GA4ANALYTICS_ID } = process.env;
 
 const plugins = [
   {
@@ -18,17 +18,17 @@ const plugins = [
     }
   },
   "gatsby-plugin-sharp",
-  "gatsby-plugin-breakpoints"
-];
-
-if (ANALYTICS_ID) {
-  plugins.push({
-    resolve: "gatsby-plugin-google-analytics",
+  "gatsby-plugin-breakpoints",
+  {
+    resolve: "gatsby-plugin-google-gtag",
     options: {
-      trackingId: ANALYTICS_ID
+      trackingIds: [GA4ANALYTICS_ID],
+      pluginConfig: {
+        head: true
+      }
     }
-  });
-}
+  }
+];
 
 module.exports = {
   plugins
