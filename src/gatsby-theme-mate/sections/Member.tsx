@@ -2,21 +2,20 @@ import React from "react";
 import { Fade } from "react-awesome-reveal";
 import Section from "gatsby-theme-mate/src/components/Section";
 import { CardContainer } from "gatsby-theme-mate/src/components/Card";
-import Triangle from "gatsby-theme-mate/src/components/Triangle";
 import Project from "../../components/Project";
 import { useProjectsQuery } from "gatsby-theme-mate/src/queries/useProjectsQuery";
 import { SECTION } from "../utils/constants";
-import useIsSp from "../../hooks/useIsSp";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useBreakpoint } from "gatsby-plugin-breakpoints";
 
 const Projects = () => {
   const projects = useProjectsQuery();
-  const isSp = useIsSp();
+  const breakpoints = useBreakpoint();
   return (
     <Section.Container id={SECTION.member}>
       <Section.Header name={SECTION.member} />
 
-      {isSp ? (
+      {breakpoints.sm ? (
         <Fade triggerOnce>
           <Swiper spaceBetween={5} slidesPerView={projects.length > 1 ? 1.1 : 1}>
             {projects.map((p, i) => (
@@ -38,17 +37,5 @@ const Projects = () => {
     </Section.Container>
   );
 };
-
-const Background = () => (
-  <>
-    <Triangle color="color3" height={["80vh", "80vh"]} width={["100vw", "100vw"]} position="top-right" />
-
-    <Triangle color="background" height={["50vh", "20vh"]} width={["50vw", "50vw"]} position="top-right" />
-
-    <Triangle color="color2" height={["25vh", "40vh"]} width={["75vw", "60vw"]} position="bottom-right" />
-
-    <Triangle color="color2" height={["25vh", "20vh"]} width={["100vw", "100vw"]} position="bottom-right" />
-  </>
-);
 
 export default Projects;
