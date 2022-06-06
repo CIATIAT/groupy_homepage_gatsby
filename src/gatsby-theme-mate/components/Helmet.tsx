@@ -22,7 +22,7 @@ const Helmet = (props: Props) => {
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="shortcut icon" href={`https:${domain}${query.profile.favicon32.src}`} />
-      <meta name="theme-color" content={"#000000"} data-react-helmet="true" />
+      <meta name="theme-color" content={props.theme.colors.groupyPurple} data-react-helmet="true" />
       <meta name="apple-mobile-web-app-status-bar-style" content={props.theme.colors.groupyPurple} />
       <meta name="image" content={`https:${domain}${query.profile.favicon32.src}`} />
       <meta itemProp="name" content={title} />
