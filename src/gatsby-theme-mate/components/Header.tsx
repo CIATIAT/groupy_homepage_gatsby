@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Headroom from "react-headroom";
-import { Box, Link as RebassLink, Flex, Image } from "rebass/styled-components";
+import { Box, Link as RebassLink, Flex } from "rebass/styled-components";
 import styled from "styled-components";
 import Link from "gatsby-theme-mate/src/components/Link";
-import { useHelmetQuery } from "gatsby-theme-mate/src/queries/useHelmetQuery";
 import { SECTION } from "../utils/constants";
 import Drawer from "../../components/Drawer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
