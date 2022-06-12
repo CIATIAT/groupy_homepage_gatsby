@@ -6,6 +6,9 @@ const useOpacityChange = (threshhold) => {
   useEffect(() => {
     if (!isBrowser()) return;
     window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const handleScroll = () => {
