@@ -10672,7 +10672,7 @@ npm-user-validate@^1.0.1:
   resolved "https://registry.yarnpkg.com/npm-user-validate/-/npm-user-validate-1.0.1.tgz#31428fc5475fe8416023f178c0ab47935ad8c561"
   integrity sha512-uQwcd/tY+h1jnEaze6cdX/LrhWhoBxfSknxentoqmIuStxUExxjWd3ULMLFPiFUrZKbOVMowH6Jq2FRWfmhcEw==
 
-npm@^8.8.0:
+npm@^8.12.1:
   version "8.12.1"
   resolved "https://registry.yarnpkg.com/npm/-/npm-8.12.1.tgz#624064fa7a8e0730223f6b2effe087e7127d567b"
   integrity sha512-0yOlhfgu1UzP6UijnaFuIS2bES2H9D90EA5OVsf2iOZw7VBrjntXKEwKfCaFA6vMVWkCP8qnPwCxxPdnDVwlNw==
