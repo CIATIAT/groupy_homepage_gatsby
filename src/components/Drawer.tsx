@@ -3,6 +3,7 @@ import { Box, Flex, Text, Link } from "rebass/styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { SECTION } from "../gatsby-theme-mate/utils/constants";
+import styled, { css } from "styled-components";
 
 const Drawer = ({
   isDrawerOpened,
@@ -19,18 +20,21 @@ const Drawer = ({
     window.scrollTo({ top: targetScrollPosition });
     setIsDrawerOpened(false);
   };
+
   return (
-    <Box
-      sx={{
+    <div
+      // headroomのcssに影響を受けないためにstyleを使用
+      style={{
         width: "100%",
         height: "100vh",
         position: "fixed",
-        top: 0,
-        right: isDrawerOpened ? 0 : "100%",
-        zIndex: 100,
+        top: "0",
+        right: "-100%",
+        zIndex: "100",
         backgroundColor: "#fff",
         padding: "0 16px",
-        transiton: "all 1s"
+        transition: "transform 0.3s ease",
+        transform: isDrawerOpened ? "translateX(-100%)" : "translateX(0)"
       }}
     >
       <Flex
@@ -64,7 +68,7 @@ const Drawer = ({
             </Box>
           ))}
       </Flex>
-    </Box>
+    </div>
   );
 };
 
