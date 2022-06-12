@@ -12133,11 +12133,6 @@ react-markdown@^8.0.1:
     unist-util-visit "^4.0.0"
     vfile "^5.0.0"
 
-react-modern-drawer@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/react-modern-drawer/-/react-modern-drawer-1.1.1.tgz#928bf03337c72294f89eceb39743127863e99f51"
-  integrity sha512-LU79xfQ6f+bINXOie6rUFfU8tFWYjv5zkF03gDVTA9nkECgZZVtTvkata+R0aIbEBI6c/UFdlc/6XLWDOiD1tA==
-
 react-motion@^0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/react-motion/-/react-motion-0.5.2.tgz#0dd3a69e411316567927917c6626551ba0607316"

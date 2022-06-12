@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { SECTION } from "../gatsby-theme-mate/utils/constants";
 
-import "react-modern-drawer/dist/index.css";
-
 const Drawer = ({
   isDrawerOpened,
   setIsDrawerOpened,
