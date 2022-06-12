@@ -1,30 +1,39 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { default as ModernDrawer } from "react-modern-drawer";
 import { Box, Flex, Text, Link } from "rebass/styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { SECTION } from "../gatsby-theme-mate/utils/constants";
 
 import "react-modern-drawer/dist/index.css";
-import { isBrowser } from "../utils";
 
 const Drawer = ({
   isDrawerOpened,
   setIsDrawerOpened,
-  handleLinkClick
+  handleLinkClick,
+  targetScrollPosition
 }: {
   isDrawerOpened: boolean;
   setIsDrawerOpened: Dispatch<SetStateAction<boolean>>;
   handleLinkClick: (index: number) => void;
+  targetScrollPosition: number;
 }) => {
+  const handleDrawerClose = () => {
+    window.scrollTo({ top: targetScrollPosition });
+    setIsDrawerOpened(false);
+  };
   return (
-    <ModernDrawer
-      open={isDrawerOpened}
-      onClose={() => setIsDrawerOpened(false)}
-      size="100vw"
-      direction="right"
-      duration={250}
-      style={{ padding: "0 16px" }}
+    <Box
+      sx={{
+        width: "100%",
+        height: "100vh",
+        position: "fixed",
+        top: 0,
+        right: isDrawerOpened ? 0 : "100%",
+        zIndex: 100,
+        backgroundColor: "#fff",
+        padding: "0 16px",
+        transiton: "all 1s"
+      }}
     >
       <Flex
         sx={{
@@ -32,8 +41,10 @@ const Drawer = ({
           alignItems: "center"
         }}
       >
-        <h1>Groupy Inc.</h1>
-        <Box onClick={() => setIsDrawerOpened(false)}>
+        <Box sx={{ fontSize: "14px" }}>
+          <h1>Groupy Inc.</h1>
+        </Box>
+        <Box onClick={handleDrawerClose}>
           <FontAwesomeIcon icon={faXmark} size="2x" />
         </Box>
       </Flex>
@@ -55,7 +66,7 @@ const Drawer = ({
             </Box>
           ))}
       </Flex>
-    </ModernDrawer>
+    </Box>
   );
 };
 
