@@ -19,6 +19,9 @@ const useScroll = () => {
   useEffect(() => {
     if (!isBrowser()) return;
     window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return stage;
