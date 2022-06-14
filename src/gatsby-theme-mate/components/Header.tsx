@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import Headroom from "react-headroom";
-import { Box, Link as RebassLink, Flex, Image } from "rebass/styled-components";
+import { Box, Link as RebassLink, Flex } from "rebass/styled-components";
 import styled from "styled-components";
 import Link from "gatsby-theme-mate/src/components/Link";
-import { useHelmetQuery } from "gatsby-theme-mate/src/queries/useHelmetQuery";
 import { SECTION } from "../utils/constants";
 import Drawer from "../../components/Drawer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { isBrowser } from "../../utils";
 import { useBreakpoint } from "gatsby-plugin-breakpoints";
+import { useAtom } from "jotai";
+import { isDrawerOpenedAtom } from "../../atoms";
+import useCurrentScrollPosition from "../../hooks/useCurrentScrollPosition";
 
 const Header = () => {
-  const [isDrawerOpened, setIsDrawerOpened] = useState<boolean>(false);
+  const [isDrawerOpened, setIsDrawerOpened] = useAtom(isDrawerOpenedAtom);
   const breakpoints = useBreakpoint();
+  const currentScrollPosition = useCurrentScrollPosition();
+  const [targetScrollPosition, setTargetScrollPosition] = useState(currentScrollPosition);
 
   const handleLinkClick = (index: number) => {
     if (isBrowser()) {
@@ -22,6 +26,12 @@ const Header = () => {
       const EXTRA_ROOM = window.innerHeight / 4;
       window.scrollTo({ top: HEIGHT_OF_LANDING + EXTRA_ROOM + window.innerHeight * index, behavior: "smooth" });
     }
+  };
+
+  const handleDrawerOpen = () => {
+    // drawerを閉じた時に戻る位置を設定
+    setTargetScrollPosition(currentScrollPosition);
+    setIsDrawerOpened(true);
   };
 
   return (
@@ -39,13 +49,14 @@ const Header = () => {
         </RebassLink>
         {breakpoints.sm ? (
           <Box>
-            <Box onClick={() => setIsDrawerOpened(true)}>
+            <Box onClick={handleDrawerOpen}>
               <FontAwesomeIcon icon={faBars} size="2x" color="white" />
             </Box>
             <Drawer
               isDrawerOpened={isDrawerOpened}
               setIsDrawerOpened={setIsDrawerOpened}
               handleLinkClick={handleLinkClick}
+              targetScrollPosition={targetScrollPosition}
             />
           </Box>
         ) : (

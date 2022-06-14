@@ -1,28 +1,23 @@
-import React from "react";
-import styled from "styled-components";
-import { Text, Box, Flex } from "rebass/styled-components";
-import { Fade } from "react-awesome-reveal";
-import SocialLink from "./SocialLink";
 import Link from "gatsby-theme-mate/src/components/Link";
 import { useSiteQuery } from "gatsby-theme-mate/src/queries/useSiteQuery";
-import { CONTENTFUL_URL, GATSBY_URL, NETLIFY_URL } from "gatsby-theme-mate/src/utils/constants";
+import { Fade } from "react-awesome-reveal";
+import { Box, Flex } from "rebass/styled-components";
+import styled from "styled-components";
+import SocialLink from "./SocialLink";
 
 const Footer = () => {
-  const { name, socialLinks } = useSiteQuery();
+  const { socialLinks } = useSiteQuery();
 
   return (
     <Box p={[2, 3]} backgroundColor="groupyPurple" id="footer" as="footer" sx={{ position: "relative" }}>
       <FooterContainer>
         <Fade direction="left" triggerOnce>
-          <Text fontSize={[1, 2]} color="background">
+          <Flex fontSize={[1, 2]} color="background" sx={{ gap: "10px" }}>
             <Link href="/company">会社概要</Link>
-            <span>　</span>
             <Link href="/terms">利用規約</Link>
-            <span>　</span>
             <Link href="/privacy-policy">プライバシーポリシー</Link>
-            <span>　</span>
             <Link href="/transaction-terms">特定商取引法に基づく表示</Link>
-          </Text>
+          </Flex>
         </Fade>
         <Flex>
           <Fade direction="right" triggerOnce cascade damping={0.5}>
