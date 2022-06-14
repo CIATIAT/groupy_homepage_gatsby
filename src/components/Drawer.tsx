@@ -23,7 +23,7 @@ const Drawer = ({
 
   return (
     <div
-      // headroomのcssに影響を受けないためにstyleを使用
+      // headroomのcssに影響を受けないためにinline styleを使用
       style={{
         width: "100%",
         height: "100vh",
