@@ -1,9 +1,8 @@
-import React, { Dispatch, SetStateAction } from "react";
-import { Box, Flex, Text, Link } from "rebass/styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Dispatch, SetStateAction } from "react";
+import { Box, Flex, Link, Text } from "rebass/styled-components";
 import { SECTION } from "../gatsby-theme-mate/utils/constants";
-import styled, { css } from "styled-components";
 
 const Drawer = ({
   isDrawerOpened,
