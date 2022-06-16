@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Box, SxStyleProp } from "rebass/styled-components";
 import { isBrowser } from "../../utils";
 import About from "../sections/About";
-import Member from "../sections/Member";
+import Member from "../sections/Members";
 import News from "../sections/News";
 // import BG from "/sampleBG.jpeg";
 
