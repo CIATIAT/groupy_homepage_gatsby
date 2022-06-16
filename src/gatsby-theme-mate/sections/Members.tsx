@@ -1,14 +1,13 @@
-import React from "react";
-import { Fade } from "react-awesome-reveal";
-import Section from "gatsby-theme-mate/src/components/Section";
-import { CardContainer } from "gatsby-theme-mate/src/components/Card";
-import Project from "../../components/Project";
-import { useProjectsQuery } from "gatsby-theme-mate/src/queries/useProjectsQuery";
-import { SECTION } from "../utils/constants";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useBreakpoint } from "gatsby-plugin-breakpoints";
+import { CardContainer } from "gatsby-theme-mate/src/components/Card";
+import Section from "gatsby-theme-mate/src/components/Section";
+import { useProjectsQuery } from "gatsby-theme-mate/src/queries/useProjectsQuery";
+import { Fade } from "react-awesome-reveal";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Project from "../../components/Project";
+import { SECTION } from "../utils/constants";
 
-const Projects = () => {
+const Members = () => {
   const projects = useProjectsQuery();
   const breakpoints = useBreakpoint();
   return (
@@ -38,4 +37,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Members;

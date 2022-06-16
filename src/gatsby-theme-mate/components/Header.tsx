@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import Headroom from "react-headroom";
-import { Box, Link as RebassLink, Flex } from "rebass/styled-components";
-import styled from "styled-components";
-import Link from "gatsby-theme-mate/src/components/Link";
-import { SECTION } from "../utils/constants";
-import Drawer from "../../components/Drawer";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { isBrowser } from "../../utils";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useBreakpoint } from "gatsby-plugin-breakpoints";
+import Link from "gatsby-theme-mate/src/components/Link";
 import { useAtom } from "jotai";
+import { useState } from "react";
+import Headroom from "react-headroom";
+import { Box, Flex, Link as RebassLink } from "rebass/styled-components";
+import styled from "styled-components";
 import { isDrawerOpenedAtom } from "../../atoms";
+import Drawer from "../../components/Drawer";
 import useCurrentScrollPosition from "../../hooks/useCurrentScrollPosition";
+import { isBrowser } from "../../utils";
+import { SECTION } from "../utils/constants";
 
 const Header = () => {
   const [isDrawerOpened, setIsDrawerOpened] = useAtom(isDrawerOpenedAtom);
@@ -65,9 +65,7 @@ const Header = () => {
               .filter((id) => id !== "home")
               .map((id, index) => (
                 <Box key={id} ml={[2, 3]} color="background" fontSize={[2, 3]}>
-                  <Link href={`/#${id}`} tabIndex={0} onClick={() => handleLinkClick(index)}>
-                    {SECTION[id]}
-                  </Link>
+                  <Link onClick={() => handleLinkClick(index)}>{SECTION[id]}</Link>
                 </Box>
               ))}
           </Flex>
