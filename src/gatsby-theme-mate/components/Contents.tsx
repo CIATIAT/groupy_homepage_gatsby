@@ -42,7 +42,7 @@ const Contents = () => {
       visibility: stage === stageName ? "visible" : "hidden",
       height: stage === stageName ? "auto" : 0,
       opacity: stage === stageName ? 1 : 0,
-      transition: "opacity 0.3s"
+      transition: "opacity 0.3s",
     };
   };
 
@@ -54,7 +54,7 @@ const Contents = () => {
           top: "0",
           minHeight: "100vh",
           width: "100%",
-          backgroundColor: "white"
+          backgroundColor: "white",
           // NOTE: ↓背景に画像をあてる場合
           // backgroundImage: `url(${BG})`,
           // backgroundSize: "cover"
