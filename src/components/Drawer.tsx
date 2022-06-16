@@ -1,15 +1,14 @@
-import React, { Dispatch, SetStateAction } from "react";
-import { Box, Flex, Text, Link } from "rebass/styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Dispatch, SetStateAction } from "react";
+import { Box, Flex, Link, Text } from "rebass/styled-components";
 import { SECTION } from "../gatsby-theme-mate/utils/constants";
-import styled, { css } from "styled-components";
 
 const Drawer = ({
   isDrawerOpened,
   setIsDrawerOpened,
   handleLinkClick,
-  targetScrollPosition
+  targetScrollPosition,
 }: {
   isDrawerOpened: boolean;
   setIsDrawerOpened: Dispatch<SetStateAction<boolean>>;
@@ -23,7 +22,7 @@ const Drawer = ({
 
   return (
     <div
-      // headroomのcssに影響を受けないためにstyleを使用
+      // headroomのcssに影響を受けないためにinline styleを使用
       style={{
         width: "100%",
         height: "100vh",
@@ -34,13 +33,13 @@ const Drawer = ({
         backgroundColor: "#fff",
         padding: "0 16px",
         transition: "transform 0.3s ease",
-        transform: isDrawerOpened ? "translateX(-100%)" : "translateX(0)"
+        transform: isDrawerOpened ? "translateX(-100%)" : "translateX(0)",
       }}
     >
       <Flex
         sx={{
           justifyContent: "space-between",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <Box sx={{ fontSize: "14px" }}>
@@ -56,7 +55,6 @@ const Drawer = ({
           .map((id, index) => (
             <Box sx={{ padding: "10px" }} key={id}>
               <Link
-                href={`#${id}`}
                 sx={{ textDecoration: "none", fontWeight: "semibold" }}
                 onClick={() => {
                   handleLinkClick(index);
