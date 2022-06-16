@@ -8,7 +8,7 @@ const Drawer = ({
   isDrawerOpened,
   setIsDrawerOpened,
   handleLinkClick,
-  targetScrollPosition
+  targetScrollPosition,
 }: {
   isDrawerOpened: boolean;
   setIsDrawerOpened: Dispatch<SetStateAction<boolean>>;
@@ -33,13 +33,13 @@ const Drawer = ({
         backgroundColor: "#fff",
         padding: "0 16px",
         transition: "transform 0.3s ease",
-        transform: isDrawerOpened ? "translateX(-100%)" : "translateX(0)"
+        transform: isDrawerOpened ? "translateX(-100%)" : "translateX(0)",
       }}
     >
       <Flex
         sx={{
           justifyContent: "space-between",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <Box sx={{ fontSize: "14px" }}>
@@ -55,7 +55,6 @@ const Drawer = ({
           .map((id, index) => (
             <Box sx={{ padding: "10px" }} key={id}>
               <Link
-                href={`#${id}`}
                 sx={{ textDecoration: "none", fontWeight: "semibold" }}
                 onClick={() => {
                   handleLinkClick(index);
