@@ -1,4 +1,3 @@
-import { useBreakpoint } from "gatsby-plugin-breakpoints";
 import { CardContainer } from "gatsby-theme-mate/src/components/Card";
 import { Post } from "gatsby-theme-mate/src/components/Post";
 import Section from "gatsby-theme-mate/src/components/Section";
@@ -10,7 +9,6 @@ import { SECTION } from "../utils/constants";
 
 const Writing = () => {
   const { posts } = useMediumQuery();
-  const breakpoints = useBreakpoint();
 
   return (
     <Section.Container id={SECTION.news}>
