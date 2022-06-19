@@ -1,6 +1,5 @@
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useBreakpoint } from "gatsby-plugin-breakpoints";
 import Link from "gatsby-theme-mate/src/components/Link";
 import { useAtom } from "jotai";
 import { useState } from "react";
@@ -9,13 +8,13 @@ import { Box, Flex, Link as RebassLink } from "rebass/styled-components";
 import styled from "styled-components";
 import { isDrawerOpenedAtom } from "../../atoms";
 import Drawer from "../../components/Drawer";
+import { ForPC, ForSP } from "../../components/MediaQuery";
 import useCurrentScrollPosition from "../../hooks/useCurrentScrollPosition";
 import { isBrowser } from "../../utils";
 import { SECTION } from "../utils/constants";
 
 const Header = () => {
   const [isDrawerOpened, setIsDrawerOpened] = useAtom(isDrawerOpenedAtom);
-  const breakpoints = useBreakpoint();
   const currentScrollPosition = useCurrentScrollPosition();
   const [targetScrollPosition, setTargetScrollPosition] = useState(currentScrollPosition);
 
@@ -47,7 +46,7 @@ const Header = () => {
             <h1>Groupy Inc.</h1>
           </Flex>
         </RebassLink>
-        {breakpoints.sm ? (
+        <ForSP>
           <Box>
             <Box onClick={handleDrawerOpen}>
               <FontAwesomeIcon icon={faBars} size="2x" color="white" />
@@ -59,7 +58,8 @@ const Header = () => {
               targetScrollPosition={targetScrollPosition}
             />
           </Box>
-        ) : (
+        </ForSP>
+        <ForPC>
           <Flex mr={[0, 3, 5]}>
             {(Object.keys(SECTION) as Array<keyof typeof SECTION>)
               .filter((id) => id !== "home")
@@ -69,7 +69,7 @@ const Header = () => {
                 </Box>
               ))}
           </Flex>
-        )}
+        </ForPC>
       </Flex>
     </StyledHeadroom>
   );

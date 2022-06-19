@@ -1,12 +1,12 @@
-import React from "react";
-import { Fade } from "react-awesome-reveal";
-import Section from "gatsby-theme-mate/src/components/Section";
-import { CardContainer } from "gatsby-theme-mate/src/components/Card";
-import { useMediumQuery } from "gatsby-theme-mate/src/queries/useMediumQuery";
-import { Post } from "gatsby-theme-mate/src/components/Post";
-import { SECTION } from "../utils/constants";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useBreakpoint } from "gatsby-plugin-breakpoints";
+import { CardContainer } from "gatsby-theme-mate/src/components/Card";
+import { Post } from "gatsby-theme-mate/src/components/Post";
+import Section from "gatsby-theme-mate/src/components/Section";
+import { useMediumQuery } from "gatsby-theme-mate/src/queries/useMediumQuery";
+import { Fade } from "react-awesome-reveal";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { ForPC, ForSP } from "../../components/MediaQuery";
+import { SECTION } from "../utils/constants";
 
 const Writing = () => {
   const { posts } = useMediumQuery();
@@ -15,7 +15,7 @@ const Writing = () => {
   return (
     <Section.Container id={SECTION.news}>
       <Section.Header name={SECTION.news} label="writing" />
-      {breakpoints.sm ? (
+      <ForSP>
         <Fade triggerOnce>
           <Swiper spaceBetween={5} slidesPerView={posts.length > 1 ? 1.1 : 1}>
             {posts.map((p) => (
@@ -25,7 +25,8 @@ const Writing = () => {
             ))}
           </Swiper>
         </Fade>
-      ) : (
+      </ForSP>
+      <ForPC>
         <CardContainer minWidth="300px">
           <Fade triggerOnce>
             {posts.map((p) => (
@@ -33,7 +34,7 @@ const Writing = () => {
             ))}
           </Fade>
         </CardContainer>
-      )}
+      </ForPC>
     </Section.Container>
   );
 };
