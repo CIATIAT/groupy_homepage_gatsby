@@ -9,6 +9,11 @@ import { Card } from 'gatsby-theme-mate/src/components/Card';
 
 type Props = ProjectType;
 
+// 下線をなくすcss
+const style: React.CSSProperties = {
+  textDecoration: 'none',
+};
+
 const Project = ({
   name,
   description,
@@ -18,6 +23,7 @@ const Project = ({
   publishedDate,
   logo,
 }: Props) => (
+  <a href={homepage} target="_blank" rel="noopener noreferrer" style={style}>
   <Card p={0}>
     <Flex style={{ height: CARD_HEIGHT }}>
       <TextContainer>
@@ -40,12 +46,12 @@ const Project = ({
               float: 'right',
             }}
           >
-            <Box mx={1} fontSize={4}>
+            {/* <Box mx={1} fontSize={4}>
               <SocialLink name="Repository" icon="github" url={repository} />
             </Box>
             <Box mx={1} fontSize={4}>
               <SocialLink name="Homepage" icon="globe" url={homepage} />
-            </Box>
+            </Box> */}
           </Flex>
           <ImageLabel
             bg="primary"
@@ -59,6 +65,7 @@ const Project = ({
       </ImageContainer>
     </Flex>
   </Card>
+  </a>
 );
 
 const CARD_HEIGHT = '200px';

@@ -77,7 +77,8 @@ const LandingPage = () => {
             <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
               <Fade direction="right" triggerOnce cascade damping={0.5}>
                 <Link
-                  href="https://groupyapp.page.link/store"
+                  // href="https://groupyapp.page.link/store"
+                  href="https://lin.ee/yMKx61j"
                   sx={{
                     color: "#fff",
                     border: "solid",
@@ -102,7 +103,7 @@ const LandingPage = () => {
                     borderRadius: "2rem",
                   }}
                 >
-                  インストールはこちら
+                  事前予約受付中
                 </Link>
               </Fade>
             </Flex>
