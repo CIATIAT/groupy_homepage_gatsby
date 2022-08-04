@@ -11,7 +11,7 @@ const Home = () => (
   <Layout>
     <Helmet
       title="特定商取引法に基づく表示"
-      description="groupyの特定商取引法に基づく表示です。groupyは複数人対複数人でマッチングするグループマッチングアプリです。"
+      description="groupyの特定商取引法に基づく表示です。groupyはグループとグループを繋げる大学生限定のアプリです。"
     />
     <Header />
     <TransactionTerms />

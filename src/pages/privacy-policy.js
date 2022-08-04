@@ -11,7 +11,7 @@ const Home = () => (
   <Layout>
     <Helmet
       title="プライバシーポリシー"
-      description="groupyのプライバシーポリシーです。groupyは複数人対複数人でマッチングするグループマッチングアプリです。"
+      description="groupyのプライバシーポリシーです。groupyはグループとグループを繋げる大学生限定のアプリです。"
     />
     <Header />
     <PrivacyPolicy />
