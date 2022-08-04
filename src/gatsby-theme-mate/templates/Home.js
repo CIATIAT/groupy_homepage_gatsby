@@ -14,8 +14,8 @@ const Home = () => {
   return (
     <Layout>
       <Helmet
-        title="groupy -大学生限定グループマッチングアプリ【公式】"
-        description="大学生限定グループマッチングアプリ「groupy」の公式ページはこちら！グループとグループを繋げる業界新登場マッチングサービスです！"
+        title="groupy -大学生限定グループアプリ【公式】"
+        description="大学生限定グループアプリ「groupy」の公式ページはこちら！グループとグループを繋げる業界新登場のサービスです！"
       />
       <Header />
       <Landing />

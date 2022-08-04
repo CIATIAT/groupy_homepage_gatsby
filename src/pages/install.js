@@ -9,7 +9,7 @@ import Helmet from "../gatsby-theme-mate/components/Helmet";
 
 const Home = () => (
   <Layout>
-    <Helmet description="groupyはPCではご利用いただけません。iPhone, Android端末でご利用ください。" />
+    <Helmet description="グループとグループを繋げるモバイルアプリgroupyはこちら。iPhone,androidで絶賛配信中！" />
     <Header />
     <Install />
     <Footer />
