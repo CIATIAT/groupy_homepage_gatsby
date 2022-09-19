@@ -36,7 +36,7 @@
     "gatsby-plugin-google-analytics": "^4.15.0",
     "gatsby-plugin-google-gtag": "^4.15.0",
     "gatsby-plugin-image": "^2.15.0",
-    "gatsby-plugin-sharp": "^4.10.1",
+    "gatsby-plugin-sharp": "^4.23.0",
     "gatsby-source-contentful": "^7.13.1",
     "gatsby-source-filesystem": "^4.15.0",
     "gatsby-theme-mate": "^2.1.1",
