@@ -102,7 +102,7 @@ const LandingPage = () => {
                     borderRadius: "2rem",
                   }}
                 >
-                  事前予約受付中
+                  インストールはこちら
                 </Link>
               </Fade>
             </Flex>
