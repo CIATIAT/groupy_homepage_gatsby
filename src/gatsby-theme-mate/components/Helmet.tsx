@@ -12,7 +12,7 @@ type Props = {
 
 const Helmet = (props: Props) => {
   const query = useHelmetQuery();
-  const title = props.title || "groupy -大学生限定グループアプリ【公式】";
+  const title = props.title || "groupy - みんなでご飯から始める恋活マッチングアプリ【公式】";
   const description = props.description || query.description;
   const domain = "groupy.space";
 
